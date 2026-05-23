@@ -1,6 +1,5 @@
-import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { RiMenuLine, RiCloseLine } from "react-icons/ri";
+import { useState, useEffect } from "react";
+import { motion } from "framer-motion";
 
 const NAV_LINKS = [
   { label: "About", href: "#about" },
@@ -10,79 +9,47 @@ const NAV_LINKS = [
   { label: "Contact", href: "#contact" },
 ];
 
-const NavLink = ({ href, label, onClick }) => {
-  const [hovered, setHovered] = useState(false);
-
-  return (
-    <a
-      href={href}
-      onClick={onClick}
-      className="relative text-sm text-gray-300 hover:text-white transition-colors py-2"
-      onMouseEnter={() => setHovered(true)}
-      onMouseLeave={() => setHovered(false)}
-    >
-      {label}
-      {hovered && (
-        <motion.span
-          layoutId="underline"
-          className="absolute left-0 right-0 -bottom-0.5 h-0.5 bg-accent"
-          transition={{ type: "spring", stiffness: 300, damping: 30 }}
-        />
-      )}
-    </a>
-  );
-};
-
 const Navbar = () => {
-  const [mobileOpen, setMobileOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
 
-  const closeMobile = () => setMobileOpen(false);
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 0);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   return (
     <motion.nav
-      initial={{ y: -80, opacity: 0 }}
-      animate={{ y: 0, opacity: 1 }}
-      transition={{ duration: 0.6, ease: "easeOut" }}
-      className="fixed top-0 left-0 right-0 z-50 backdrop-blur-md bg-black/60 border-b border-border"
+      initial={{ opacity: 0, y: -20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5, ease: "easeOut" }}
+      className={`fixed top-0 left-0 right-0 z-50 transition-colors duration-200 ${
+        scrolled
+          ? "backdrop-blur-md border-b border-[#222222] bg-[#0A0A0A]/80"
+          : "bg-transparent"
+      }`}
     >
-      <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
-        <a href="#" className="font-mono text-accent text-lg font-medium tracking-tight">
+      <div className="max-w-6xl mx-auto px-8 py-5 flex items-center justify-between">
+        <a
+          href="#"
+          className="font-display font-bold text-white text-lg"
+        >
           Vansh
         </a>
 
-        <div className="hidden md:flex items-center gap-8">
+        <div className="flex items-center gap-8">
           {NAV_LINKS.map((link) => (
-            <NavLink key={link.href} {...link} />
+            <a
+              key={link.href}
+              href={link.href}
+              className="font-sans text-sm text-[#A1A1AA] hover:text-white transition-colors duration-200"
+            >
+              {link.label}
+            </a>
           ))}
         </div>
-
-        <button
-          type="button"
-          className="md:hidden text-2xl text-gray-300 hover:text-accent transition-colors"
-          onClick={() => setMobileOpen(!mobileOpen)}
-          aria-label={mobileOpen ? "Close menu" : "Open menu"}
-        >
-          {mobileOpen ? <RiCloseLine /> : <RiMenuLine />}
-        </button>
       </div>
-
-      <AnimatePresence>
-        {mobileOpen && (
-          <motion.div
-            initial={{ height: 0, opacity: 0 }}
-            animate={{ height: "auto", opacity: 1 }}
-            exit={{ height: 0, opacity: 0 }}
-            transition={{ duration: 0.3, ease: "easeOut" }}
-            className="md:hidden overflow-hidden border-t border-border bg-black/90 backdrop-blur-md"
-          >
-            <div className="flex flex-col items-center gap-4 py-6">
-              {NAV_LINKS.map((link) => (
-                <NavLink key={link.href} {...link} onClick={closeMobile} />
-              ))}
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
     </motion.nav>
   );
 };

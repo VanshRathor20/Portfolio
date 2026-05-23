@@ -1,134 +1,132 @@
-import { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { HiArrowDown } from "react-icons/hi";
-import {
-  staggerContainer,
-  fadeSlideUp,
-  buttonHoverTap,
-} from "../motionVariants";
+import { useState } from "react";
+import { motion } from "framer-motion";
 
-const ROLES = [
-  "Full-Stack Developer",
-  "React Engineer",
-  "Node.js Developer",
-  "API Architect",
-  "Problem Solver",
-];
+const fadeIn = (delay) => ({
+  initial: { opacity: 0 },
+  animate: { opacity: 1 },
+  transition: { duration: 0.5, delay, ease: "easeOut" },
+});
+
+const CodeVisual = () => (
+  <div className="w-full max-w-md bg-[#111111] rounded-2xl border border-[#222222] p-6 font-mono text-sm">
+    <div className="flex gap-2 mb-4">
+      <span className="w-3 h-3 rounded-full bg-[#FF5F57]" />
+      <span className="w-3 h-3 rounded-full bg-[#FFBD2E]" />
+      <span className="w-3 h-3 rounded-full bg-[#28CA41]" />
+    </div>
+    <p className="text-[#7C3AED]">
+      const <span className="text-white">developer</span> = {"{"}
+    </p>
+    <p className="text-[#A1A1AA] pl-4">
+      name: <span className="text-emerald-400">&quot;Vansh&quot;</span>,
+    </p>
+    <p className="text-[#A1A1AA] pl-4">
+      role: <span className="text-emerald-400">&quot;Full-Stack Dev&quot;</span>,
+    </p>
+    <p className="text-[#A1A1AA] pl-4">
+      stack:{" "}
+      <span className="text-emerald-400">
+        [&quot;React&quot;, &quot;Node&quot;, &quot;MongoDB&quot;]
+      </span>
+      ,
+    </p>
+    <p className="text-[#A1A1AA] pl-4">
+      available: <span className="text-emerald-400">true</span>
+    </p>
+    <p className="text-[#7C3AED]">{"}"}</p>
+    <p className="mt-4 text-[#A1A1AA]">
+      <span className="text-[#7C3AED]">→ </span>
+      <span className="text-white animate-pulse">Ready to build._</span>
+    </p>
+  </div>
+);
 
 const Hero = () => {
-  const [roleIndex, setRoleIndex] = useState(0);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setRoleIndex((prev) => (prev + 1) % ROLES.length);
-    }, 3000);
-    return () => clearInterval(interval);
-  }, []);
+  const [imageError, setImageError] = useState(false);
 
   return (
     <section
       id="hero"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16"
+      className="min-h-screen flex items-center"
+      style={{
+        background: `radial-gradient(ellipse 80% 60% at 60% 40%, rgba(124, 58, 237, 0.08) 0%, transparent 70%), #0A0A0A`,
+      }}
     >
-      <div className="absolute inset-0 hero-grid" />
-
-      <motion.div
-        className="absolute top-1/4 -left-32 w-96 h-96 rounded-full bg-accent/10 blur-3xl"
-        animate={{ scale: [1, 1.2, 1], opacity: [0.3, 0.5, 0.3] }}
-        transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-      />
-      <motion.div
-        className="absolute bottom-1/4 -right-32 w-80 h-80 rounded-full bg-accentGreen/10 blur-3xl"
-        animate={{ scale: [1.2, 1, 1.2], opacity: [0.4, 0.2, 0.4] }}
-        transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-      />
-      <motion.div
-        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] rounded-full bg-accent/5 blur-3xl"
-        animate={{ scale: [1, 1.15, 1] }}
-        transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-      />
-
-      <motion.div
-        className="relative z-10 max-w-6xl mx-auto px-6 text-center"
-        variants={staggerContainer}
-        initial="initial"
-        animate="animate"
-      >
-        <motion.p
-          variants={fadeSlideUp}
-          className="text-gray-400 text-lg md:text-xl mb-4"
-        >
-          Hi, I&apos;m
-        </motion.p>
-
-        <motion.h1
-          variants={fadeSlideUp}
-          className="text-6xl md:text-8xl font-bold mb-6 tracking-tight"
-        >
-          <span className="text-gradient">Vansh</span>
-        </motion.h1>
-
-        <motion.div
-          variants={fadeSlideUp}
-          className="h-12 md:h-14 flex items-center justify-center mb-6"
-        >
-          <AnimatePresence mode="wait">
-            <motion.span
-              key={roleIndex}
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -30 }}
-              transition={{ duration: 0.4, ease: "easeOut" }}
-              className="text-2xl md:text-4xl font-medium text-accent font-mono"
+      <div className="max-w-6xl mx-auto px-8 w-full">
+        <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-8">
+          <motion.div
+            className="w-full lg:w-[55%]"
+            initial={{ opacity: 0, x: -30 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.7, ease: "easeOut" }}
+          >
+            <motion.p
+              {...fadeIn(0.1)}
+              className="font-mono text-xs text-[#7C3AED] uppercase mb-4"
+              style={{ letterSpacing: "0.2em" }}
             >
-              {ROLES[roleIndex]}
-            </motion.span>
-          </AnimatePresence>
-        </motion.div>
+              Full-Stack Developer
+            </motion.p>
 
-        <motion.p
-          variants={fadeSlideUp}
-          className="text-gray-400 text-base md:text-lg max-w-2xl mx-auto mb-10 leading-relaxed"
-        >
-          I build end-to-end web products — from pixel-perfect UIs to scalable
-          backend systems.
-        </motion.p>
+            <motion.h1
+              {...fadeIn(0.2)}
+              className="font-display font-bold text-5xl md:text-6xl lg:text-7xl text-[#F5F5F5] leading-tight"
+            >
+              Building digital
+              <br />
+              products that
+              <br />
+              matter.
+            </motion.h1>
 
-        <motion.div
-          variants={fadeSlideUp}
-          className="flex flex-col sm:flex-row items-center justify-center gap-4"
-        >
-          <motion.a
-            href="#projects"
-            {...buttonHoverTap}
-            className="px-8 py-3 rounded-lg bg-accent text-black font-semibold shadow-[0_0_30px_rgba(34,211,238,0.4)] hover:shadow-[0_0_40px_rgba(34,211,238,0.6)] transition-shadow"
+            <motion.p
+              {...fadeIn(0.3)}
+              className="font-sans text-[#A1A1AA] text-base max-w-sm mt-6 leading-relaxed"
+            >
+              I craft fast, scalable web applications from frontend to backend.
+            </motion.p>
+
+            <motion.div
+              {...fadeIn(0.4)}
+              className="flex flex-wrap gap-4 mt-10"
+            >
+              <a
+                href="#projects"
+                className="bg-[#7C3AED] text-white px-6 py-3 rounded-lg text-sm font-medium hover:bg-[#6D28D9] transition-colors duration-200"
+                style={{ boxShadow: "0 0 20px rgba(124,58,237,0.3)" }}
+              >
+                View Projects
+              </a>
+              <a
+                href="#"
+                className="border border-[#333333] text-[#F5F5F5] px-6 py-3 rounded-lg text-sm font-medium hover:border-[#444444] hover:text-white transition-colors duration-200 bg-transparent"
+              >
+                Download CV
+              </a>
+            </motion.div>
+          </motion.div>
+
+          <motion.div
+            className="w-full lg:w-[45%]"
+            initial={{ opacity: 0, x: 30 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.7, delay: 0.3, ease: "easeOut" }}
           >
-            View Projects
-          </motion.a>
-          <motion.a
-            href="#"
-            {...buttonHoverTap}
-            className="px-8 py-3 rounded-lg border border-accent text-accent font-semibold hover:bg-accent/10 transition-colors"
-          >
-            Download CV
-          </motion.a>
-        </motion.div>
-      </motion.div>
-
-      <motion.a
-        href="#about"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1.2 }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 text-accent"
-      >
-        <motion.div
-          animate={{ y: [0, 8, 0] }}
-          transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-        >
-          <HiArrowDown className="text-3xl" />
-        </motion.div>
-      </motion.a>
+            <div className="flex items-center justify-center w-full h-[500px]">
+              {imageError ? (
+                <CodeVisual />
+              ) : (
+                <img
+                  src="https://illustrations.popsy.co/violet/working-vacation.svg"
+                  alt="Developer Illustration"
+                  className="w-full max-w-lg object-contain drop-shadow-2xl"
+                  onError={() => setImageError(true)}
+                />
+              )}
+            </div>
+          </motion.div>
+        </div>
+      </div>
     </section>
   );
 };

@@ -1,5 +1,3 @@
-import ScrollProgress from "./components/ScrollProgress";
-import CursorGlow from "./components/CursorGlow";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import About from "./components/About";
@@ -9,23 +7,17 @@ import Experience from "./components/Experience";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 
-const App = () => {
+export default function App() {
   return (
-    <div className="relative min-h-screen bg-black">
-      <ScrollProgress />
-      <CursorGlow />
+    <main className="bg-[#0A0A0A] min-h-screen">
       <Navbar />
-      <main>
-        <Hero />
-        <About />
-        <TechStack />
-        <Projects />
-        <Experience />
-        <Contact />
-      </main>
+      <Hero />
+      <About />
+      <TechStack />
+      <Projects />
+      <Experience />
+      <Contact />
       <Footer />
-    </div>
+    </main>
   );
-};
-
-export default App;
+}
