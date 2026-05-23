@@ -1,8 +1,9 @@
-const SectionHeading = ({ label, title }) => {
+const SectionHeading = ({ label, title, description, className = "" }) => {
   return (
-    <div>
-      {label && <p>{label}</p>}
-      {title && <h2>{title}</h2>}
+    <div className={`section-header ${className}`.trim()}>
+      {label && <p className="text-label">{label}</p>}
+      {title && <h2 className="text-heading">{title}</h2>}
+      {description && <p className="text-body-lg max-w-prose">{description}</p>}
     </div>
   );
 };
