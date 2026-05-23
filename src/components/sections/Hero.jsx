@@ -2,6 +2,7 @@ import { motion, useReducedMotion } from "framer-motion";
 import Container from "../layout/Container";
 import Button from "../ui/Button";
 import { easeOut, transition } from "../../lib/motion";
+import Robo from "../ui/Robo";
 
 const Hero = () => {
   const reduceMotion = useReducedMotion();
@@ -27,7 +28,7 @@ const Hero = () => {
       <Container>
         <div className="hero-grid">
           <motion.div className="hero-content stack-lg" {...anim}>
-            <p className="text-label">Frontend developer</p>
+            <p className="text-label">Full Stack Developer</p>
 
             <h1 className="text-display">
               Product UI, built with care.
@@ -51,14 +52,10 @@ const Hero = () => {
 
           <motion.div className="hero-visual-wrap" {...visualAnim}>
             <div className="hero-visual" aria-hidden="true">
+              <div className="hero-visual-glow hero-visual-glow--one" />
+              <div className="hero-visual-glow hero-visual-glow--two" />
               <div className="hero-visual-scene">
-                <div className="hero-visual-plane hero-visual-plane--back" />
-                <div className="hero-visual-plane hero-visual-plane--mid" />
-                <div className="hero-visual-plane hero-visual-plane--front" />
-              </div>
-              <div className="hero-visual-caption">
-                <span>Layout study</span>
-                <span>2025</span>
+                <Robo />
               </div>
             </div>
           </motion.div>
