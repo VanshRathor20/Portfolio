@@ -28,24 +28,22 @@ const Hero = () => {
       <Container>
         <div className="hero-grid">
           <motion.div className="hero-content stack-lg" {...anim}>
-            <p className="text-label">Full Stack Developer</p>
+            <p className="text-label">FULL-STACK DEVELOPER</p>
 
-            <h1 className="text-display">
-              Product UI, built with care.
-            </h1>
+            <h1 className="text-display">Full-stack apps, shipped fast.</h1>
 
             <p className="text-body-lg max-w-prose">
-              I work in React and TypeScript — layout systems, forms, data
-              tables, and the unglamorous states in between. Based in India,
-              open to remote roles and selective freelance work.
+              Full stack developer focused on modern web applications,
+              interactive interfaces, and performant backend systems. I build
+              products that look premium and feel seamless.
             </p>
 
             <div className="hero-actions">
               <Button href="#projects" variant="primary">
-                View work
+                View My Work
               </Button>
               <Button href="#contact" variant="secondary">
-                Contact
+                Let's Talk
               </Button>
             </div>
           </motion.div>
