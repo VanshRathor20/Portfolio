@@ -7,18 +7,24 @@ const projects = [
     category: "FULL-STACK APP",
     title: "E-Commerce Platform",
     live: "https://e-mart-website.netlify.app/",
+    imgMain: "/src/assets/emart-home.png",
+    comingSoon: false,
   },
   {
     number: "02",
-    category: "REAL-TIME APP",
-    title: "Chat Application",
-    live: "#",
+    category: "FINANCE DASHBOARD",
+    title: "Expense Tracker",
+    live: "https://finance-dashboard-001.netlify.app/dashboard",
+    imgMain: "/src/assets/finance dashboard.png",
+    comingSoon: false,
   },
   {
     number: "03",
-    category: "SAAS PRODUCT",
-    title: "Task Manager",
+    category: "REAL-TIME APP",
+    title: "Chat Application",
     live: "#",
+    imgMain: null,
+    comingSoon: true,
   },
 ];
 
@@ -26,44 +32,34 @@ const StickyCard = ({ project, index, total, scrollYProgress }) => {
   const start = index / total;
   const end = (index + 1) / total;
   const tiltDirection = index % 2 === 0 ? -1 : 1;
-
-  // Spring config for smooth physics
   const springConfig = { stiffness: 100, damping: 30, mass: 1 };
 
-  // No tilt at start, only tilts when next card pushes it
   const rotate = useTransform(
     scrollYProgress,
     [start, start + 0.3, end],
-    [0, 0, tiltDirection * 2.5],
+    [0, 0, tiltDirection * 2.5]
   );
-
   const scale = useTransform(
     scrollYProgress,
     [start, end],
-    [1, 1 - (index + 1) * 0.012],
+    [1, 1 - (index + 1) * 0.012]
   );
-
   const y = useTransform(scrollYProgress, [start, end], [0, -8]);
-
-  // Spring transforms
-  const rotateSpring = useSpring(rotate, springConfig);
-  const scaleSpring = useSpring(scale, springConfig);
-  const ySpring = useSpring(y, springConfig);
-
-  // Opacity fade as card gets pushed back
   const opacity = useTransform(
     scrollYProgress,
     [start, start + 0.5, end],
-    [1, 1, 0.7],
+    [1, 1, 0.7]
   );
-  const opacitySpring = useSpring(opacity, springConfig);
-
-  // Blur as card goes behind
   const blur = useTransform(
     scrollYProgress,
     [start, end],
-    ["blur(0px)", "blur(1.5px)"],
+    ["blur(0px)", "blur(1.5px)"]
   );
+
+  const rotateSpring = useSpring(rotate, springConfig);
+  const scaleSpring = useSpring(scale, springConfig);
+  const ySpring = useSpring(y, springConfig);
+  const opacitySpring = useSpring(opacity, springConfig);
 
   return (
     <motion.div
@@ -98,54 +94,40 @@ const StickyCard = ({ project, index, total, scrollYProgress }) => {
       }}
     >
       {/* TOP ROW */}
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "space-between",
-          alignItems: "flex-start",
-          marginBottom: "24px",
-        }}
-      >
-        <div
-          style={{
-            display: "flex",
-            alignItems: "center",
-            gap: "16px",
-          }}
-        >
-          <div
-            style={{
-              fontFamily: "JetBrains Mono, monospace",
-              fontSize: "64px",
-              fontWeight: "800",
-              color: "#f0f0f0",
-              lineHeight: "1",
-            }}
-          >
+      <div style={{
+        display: "flex",
+        justifyContent: "space-between",
+        alignItems: "flex-start",
+        marginBottom: "24px",
+      }}>
+        <div style={{ display: "flex", alignItems: "center", gap: "16px" }}>
+          <div style={{
+            fontFamily: "JetBrains Mono, monospace",
+            fontSize: "64px",
+            fontWeight: "800",
+            color: "#f0f0f0",
+            lineHeight: "1",
+          }}>
             {project.number}
           </div>
           <div>
-            <div
-              style={{
-                fontFamily: "JetBrains Mono, monospace",
-                fontSize: "9px",
-                letterSpacing: "0.18em",
-                color: "#7C3AED",
-                textTransform: "uppercase",
-                marginBottom: "4px",
-              }}
-            >
+            <div style={{
+              fontFamily: "JetBrains Mono, monospace",
+              fontSize: "9px",
+              letterSpacing: "0.18em",
+              color: "#7C3AED",
+              textTransform: "uppercase",
+              marginBottom: "4px",
+            }}>
               {project.category}
             </div>
-            <div
-              style={{
-                fontFamily: "Satoshi, sans-serif",
-                fontSize: "20px",
-                fontWeight: "700",
-                color: "#F0F0F0",
-                letterSpacing: "-0.02em",
-              }}
-            >
+            <div style={{
+              fontFamily: "Satoshi, sans-serif",
+              fontSize: "20px",
+              fontWeight: "700",
+              color: "#F0F0F0",
+              letterSpacing: "-0.02em",
+            }}>
               {project.title}
             </div>
           </div>
@@ -177,54 +159,63 @@ const StickyCard = ({ project, index, total, scrollYProgress }) => {
             e.currentTarget.style.color = "#666";
           }}
         >
-          Live Project
+          {project.comingSoon ? "In Progress" : "Live Project"}
         </a>
       </div>
 
-      {/* IMAGE GRID */}
-      <div
-        style={{
-          display: "flex",
-          gap: "10px",
-          flex: 1,
-          minHeight: "0px",
-        }}
-      >
-        {/* Left: 2 stacked */}
-        <div
-          style={{
-            width: "38%",
-            display: "flex",
-            flexDirection: "column",
-            gap: "10px",
-          }}
-        >
-          {[1, 2].map((i) => (
-            <div
-              key={i}
-              style={{
-                flex: i === 1 ? "1" : "1.4",
-                background: "#141414",
-                borderRadius: "14px",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                color: "#252525",
-                fontSize: "8px",
-                fontFamily: "JetBrains Mono, monospace",
-                textTransform: "uppercase",
-                letterSpacing: "0.1em",
-              }}
-            >
-              preview
-            </div>
-          ))}
-        </div>
+      {/* IMAGE AREA — full width */}
+      <div style={{ flex: 1, minHeight: 0, borderRadius: "14px", overflow: "hidden" }}>
 
-        {/* Right: 1 tall */}
-        <div
-          style={{
-            width: "62%",
+        {project.comingSoon ? (
+          // COMING SOON CARD
+          <div style={{
+            width: "100%",
+            height: "100%",
+            background: "#0a0a0a",
+            border: "1px solid #1a1a1a",
+            borderRadius: "14px",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            overflow: "hidden",
+            position: "relative",
+          }}>
+            {/* Big tilted background text */}
+            <div style={{
+              position: "absolute",
+              transform: "rotate(-15deg)",
+              whiteSpace: "nowrap",
+              fontFamily: "Satoshi, sans-serif",
+              fontSize: "clamp(60px, 10vw, 120px)",
+              fontWeight: "800",
+              color: "#141414",
+              letterSpacing: "-0.04em",
+              userSelect: "none",
+              lineHeight: "1.1",
+              textAlign: "center",
+            }}>
+              COMING<br />SOON
+            </div>
+          </div>
+
+        ) : project.imgMain ? (
+          // PROJECT IMAGE
+          <img
+            src={project.imgMain}
+            alt={project.title}
+            style={{
+              width: "100%",
+              height: "100%",
+              objectFit: "cover",
+              objectPosition: "top",
+              borderRadius: "14px",
+            }}
+          />
+        ) : (
+          // PLACEHOLDER
+          <div style={{
+            width: "100%",
+            height: "100%",
             background: "#141414",
             borderRadius: "14px",
             display: "flex",
@@ -235,10 +226,10 @@ const StickyCard = ({ project, index, total, scrollYProgress }) => {
             fontFamily: "JetBrains Mono, monospace",
             textTransform: "uppercase",
             letterSpacing: "0.1em",
-          }}
-        >
-          main preview
-        </div>
+          }}>
+            preview
+          </div>
+        )}
       </div>
     </motion.div>
   );
@@ -252,48 +243,40 @@ const Projects = () => {
   });
 
   return (
-    <section
-      style={{
-        background: "#0C0C0C",
-        borderRadius: "48px 48px 0 0",
-        marginTop: "-40px",
-        position: "relative",
-        zIndex: 10,
-        paddingTop: "80px",
-        paddingBottom: "160px",
-        paddingLeft: "48px",
-        paddingRight: "48px",
-      }}
-    >
-      {/* Heading */}
+    <section style={{
+      background: "#0C0C0C",
+      borderRadius: "48px 48px 0 0",
+      marginTop: "-40px",
+      position: "relative",
+      zIndex: 10,
+      paddingTop: "80px",
+      paddingBottom: "160px",
+      paddingLeft: "48px",
+      paddingRight: "48px",
+    }}>
       <div style={{ maxWidth: "1000px", margin: "0 auto 60px" }}>
-        <p
-          style={{
-            fontFamily: "JetBrains Mono, monospace",
-            fontSize: "10px",
-            letterSpacing: "0.2em",
-            color: "#7C3AED",
-            textTransform: "uppercase",
-            marginBottom: "12px",
-          }}
-        >
+        <p style={{
+          fontFamily: "JetBrains Mono, monospace",
+          fontSize: "10px",
+          letterSpacing: "0.2em",
+          color: "#7C3AED",
+          textTransform: "uppercase",
+          marginBottom: "12px",
+        }}>
           SELECTED WORK
         </p>
-        <h2
-          style={{
-            fontFamily: "Satoshi, sans-serif",
-            fontSize: "48px",
-            fontWeight: "700",
-            color: "#F0F0F0",
-            letterSpacing: "-0.03em",
-            margin: 0,
-          }}
-        >
+        <h2 style={{
+          fontFamily: "Satoshi, sans-serif",
+          fontSize: "48px",
+          fontWeight: "700",
+          color: "#F0F0F0",
+          letterSpacing: "-0.03em",
+          margin: 0,
+        }}>
           Projects
         </h2>
       </div>
 
-      {/* Cards */}
       <div
         ref={containerRef}
         style={{
