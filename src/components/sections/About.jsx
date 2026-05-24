@@ -19,18 +19,18 @@ const About = () => {
   const reduceMotion = useReducedMotion();
 
   return (
-    <section id="about" className="section">
+    <section id="about" className="section about-section">
       <Container>
         <Reveal>
           <SectionHeading label="ABOUT" title="I build things for the web." />
         </Reveal>
 
         <div
-          className="about-grid"
+          className="about-layout"
           style={{ display: "flex", flexDirection: "row", gap: "48px" }}
         >
           <motion.div
-            className="about-stats"
+            className="about-left about-stats"
             initial="hidden"
             whileInView="visible"
             viewport={viewport}
@@ -79,7 +79,7 @@ const About = () => {
             ))}
           </motion.div>
 
-          <div style={{ width: "55%" }}>
+          <div className="about-right" style={{ width: "55%" }}>
             <Reveal delay={0.08} className="about-bio">
               <h3 className="text-subheading">I build things for the web.</h3>
 
@@ -92,13 +92,13 @@ const About = () => {
               <p className="text-body" style={{ color: "#A1A1AA" }}>
                 I enjoy creating visually engaging digital products using React,
                 JavaScript, Node.js, and modern frontend technologies. Currently
-                pursuing B.Tech at IIMT Engineering College, Meerut — graduating
+                pursuing B.Tech at IIMT Engineering College, Meerut - graduating
                 2027.
               </p>
 
               <p className="text-body" style={{ color: "#A1A1AA" }}>
                 Previously built official websites for Tyrano Softwares during a
-                1-year internship. I care about every detail — from clean code
+                1-year internship. I care about every detail - from clean code
                 to smooth animations.
               </p>
 

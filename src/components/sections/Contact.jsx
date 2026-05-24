@@ -12,7 +12,7 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="section section-sm">
+    <section id="contact" className="section section-sm contact-section">
       <Container>
         <div className="contact-layout">
           <Reveal>
@@ -102,6 +102,7 @@ const Contact = () => {
 
           <Reveal delay={0.1}>
             <div
+              className="contact-social-icons"
               style={{
                 display: "flex",
                 justifyContent: "center",

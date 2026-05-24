@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { HiOutlineBars3, HiXMark } from "react-icons/hi2";
+import { RiMenuLine, RiCloseLine } from "react-icons/ri";
 import Container from "./Container";
 
 const NAV_LINKS = [
@@ -32,7 +32,7 @@ const Navbar = () => {
 
   return (
     <header className={`navbar ${scrolled ? "is-scrolled" : ""}`}>
-      <Container>
+      <Container className="navbar-container">
         <nav className="navbar-inner" aria-label="Main navigation">
           <a href="#hero" className="navbar-logo" onClick={closeMobile}>
             Vansh
@@ -53,17 +53,13 @@ const Navbar = () => {
             aria-expanded={mobileOpen}
             aria-label={mobileOpen ? "Close menu" : "Open menu"}
           >
-            {mobileOpen ? (
-              <HiXMark size={22} />
-            ) : (
-              <HiOutlineBars3 size={22} />
-            )}
+            {mobileOpen ? <RiCloseLine size={22} /> : <RiMenuLine size={22} />}
           </button>
         </nav>
       </Container>
 
       <div className={`navbar-mobile ${mobileOpen ? "is-open" : ""}`}>
-        <Container>
+        <Container className="navbar-container">
           <div className="navbar-mobile-inner">
             {NAV_LINKS.map((link) => (
               <a

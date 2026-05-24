@@ -3,7 +3,12 @@ import Container from "../layout/Container";
 import SectionHeading from "../ui/SectionHeading";
 import Reveal from "../ui/Reveal";
 import { experience } from "../../data/experience";
-import { fadeUp, staggerContainer, transition, viewport } from "../../lib/motion";
+import {
+  fadeUp,
+  staggerContainer,
+  transition,
+  viewport,
+} from "../../lib/motion";
 
 const Experience = () => {
   const reduceMotion = useReducedMotion();
@@ -35,7 +40,7 @@ const Experience = () => {
             >
               <span className="timeline-marker" aria-hidden="true" />
 
-              <div className="timeline-content">
+              <div className="timeline-content timeline-card">
                 <time className="timeline-period" dateTime={item.period}>
                   {item.period}
                 </time>

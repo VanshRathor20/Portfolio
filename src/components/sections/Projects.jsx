@@ -1,9 +1,17 @@
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { motion, useScroll, useTransform, useSpring } from "framer-motion";
 
 const projects = [
   {
     number: "01",
+    category: "COMPANY WEBSITE",
+    title: "Tyrano Softwares",
+    live: "https://www.tyranosoftwares.com/",
+    imgMain: "/src/assets/tyrano-software.png",
+    comingSoon: false,
+  },
+  {
+    number: "02",
     category: "FULL-STACK APP",
     title: "E-Commerce Platform",
     live: "https://e-mart-website.netlify.app/",
@@ -11,7 +19,7 @@ const projects = [
     comingSoon: false,
   },
   {
-    number: "02",
+    number: "03",
     category: "FINANCE DASHBOARD",
     title: "Expense Tracker",
     live: "https://finance-dashboard-001.netlify.app/dashboard",
@@ -19,7 +27,7 @@ const projects = [
     comingSoon: false,
   },
   {
-    number: "03",
+    number: "04",
     category: "REAL-TIME APP",
     title: "Chat Application",
     live: "#",
@@ -28,7 +36,163 @@ const projects = [
   },
 ];
 
-const StickyCard = ({ project, index, total, scrollYProgress }) => {
+const MobileStickyCard = ({ project }) => {
+  return (
+    <div
+      style={{
+        width: "100%",
+        borderRadius: "20px",
+        border: "1px solid #1e1e1e",
+        background: "#0f0f0f",
+        padding: "20px",
+        marginBottom: "16px",
+        display: "flex",
+        flexDirection: "column",
+      }}
+    >
+      {/* TOP ROW */}
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "space-between",
+          alignItems: "flex-start",
+          marginBottom: "16px",
+        }}
+      >
+        <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
+          <div
+            style={{
+              fontFamily: "JetBrains Mono, monospace",
+              fontSize: "36px",
+              fontWeight: "800",
+              color: "#f0f0f0",
+              lineHeight: "1",
+            }}
+          >
+            {project.number}
+          </div>
+          <div>
+            <div
+              style={{
+                fontFamily: "JetBrains Mono, monospace",
+                fontSize: "8px",
+                letterSpacing: "0.15em",
+                color: "#7C3AED",
+                textTransform: "uppercase",
+                marginBottom: "3px",
+              }}
+            >
+              {project.category}
+            </div>
+            <div
+              style={{
+                fontFamily: "Satoshi, sans-serif",
+                fontSize: "15px",
+                fontWeight: "700",
+                color: "#F0F0F0",
+                letterSpacing: "-0.02em",
+              }}
+            >
+              {project.title}
+            </div>
+          </div>
+        </div>
+
+        <a
+          href={project.live}
+          target="_blank"
+          rel="noreferrer"
+          style={{
+            border: "1px solid #7C3AED",
+            borderRadius: "999px",
+            padding: "6px 12px",
+            color: "#A78BFA",
+            fontSize: "8px",
+            fontFamily: "JetBrains Mono, monospace",
+            textTransform: "uppercase",
+            letterSpacing: "0.1em",
+            textDecoration: "none",
+            whiteSpace: "nowrap",
+          }}
+        >
+          Live
+        </a>
+      </div>
+
+      {/* IMAGE AREA */}
+      <div
+        style={{
+          height: "200px",
+          borderRadius: "12px",
+          overflow: "hidden",
+        }}
+      >
+        {project.comingSoon ? (
+          <div
+            style={{
+              width: "100%",
+              height: "100%",
+              background: "#0a0a0a",
+              border: "1px solid #1a1a1a",
+              borderRadius: "12px",
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              justifyContent: "center",
+              gap: "8px",
+            }}
+          >
+            <div
+              style={{
+                fontFamily: "Satoshi, sans-serif",
+                fontSize: "28px",
+                fontWeight: "800",
+                color: "#1a1a1a",
+                letterSpacing: "-0.03em",
+              }}
+            >
+              COMING SOON
+            </div>
+            <span
+              style={{
+                fontFamily: "JetBrains Mono, monospace",
+                fontSize: "9px",
+                color: "#444",
+                letterSpacing: "0.2em",
+                textTransform: "uppercase",
+              }}
+            >
+              In Development
+            </span>
+          </div>
+        ) : project.imgMain ? (
+          <img
+            src={project.imgMain}
+            alt={project.title}
+            style={{
+              width: "100%",
+              height: "100%",
+              objectFit: "cover",
+              objectPosition: "top 40px",
+              borderRadius: "12px",
+            }}
+          />
+        ) : (
+          <div
+            style={{
+              width: "100%",
+              height: "100%",
+              background: "#141414",
+              borderRadius: "12px",
+            }}
+          />
+        )}
+      </div>
+    </div>
+  );
+};
+
+const DesktopStickyCard = ({ project, index, total, scrollYProgress }) => {
   const start = index / total;
   const end = (index + 1) / total;
   const tiltDirection = index % 2 === 0 ? -1 : 1;
@@ -74,7 +238,7 @@ const StickyCard = ({ project, index, total, scrollYProgress }) => {
       style={{
         position: "sticky",
         top: `${100 + index * 24}px`,
-        height: "76vh",
+        height: "85vh",
         maxWidth: "1000px",
         margin: "0 auto 16px",
         borderRadius: "24px",
@@ -95,6 +259,7 @@ const StickyCard = ({ project, index, total, scrollYProgress }) => {
     >
       {/* TOP ROW */}
       <div
+        className="project-top-row"
         style={{
           display: "flex",
           justifyContent: "space-between",
@@ -104,6 +269,7 @@ const StickyCard = ({ project, index, total, scrollYProgress }) => {
       >
         <div style={{ display: "flex", alignItems: "center", gap: "16px" }}>
           <div
+            className="project-number"
             style={{
               fontFamily: "JetBrains Mono, monospace",
               fontSize: "64px",
@@ -128,6 +294,7 @@ const StickyCard = ({ project, index, total, scrollYProgress }) => {
               {project.category}
             </div>
             <div
+              className="project-title"
               style={{
                 fontFamily: "Satoshi, sans-serif",
                 fontSize: "20px",
@@ -165,6 +332,7 @@ const StickyCard = ({ project, index, total, scrollYProgress }) => {
 
       {/* IMAGE AREA — full width */}
       <div
+        className="project-image-area"
         style={{
           flex: 1,
           minHeight: 0,
@@ -248,8 +416,32 @@ const StickyCard = ({ project, index, total, scrollYProgress }) => {
   );
 };
 
+const StickyCard = ({ project, index, total, scrollYProgress, isMobile }) => {
+  if (isMobile) {
+    return <MobileStickyCard project={project} />;
+  }
+
+  return (
+    <DesktopStickyCard
+      project={project}
+      index={index}
+      total={total}
+      scrollYProgress={scrollYProgress}
+    />
+  );
+};
+
 const Projects = () => {
   const containerRef = useRef(null);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const check = () => setIsMobile(window.innerWidth < 768);
+    check();
+    window.addEventListener("resize", check);
+    return () => window.removeEventListener("resize", check);
+  }, []);
+
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: ["start start", "end end"],
@@ -257,6 +449,7 @@ const Projects = () => {
 
   return (
     <section
+      className="projects-section"
       style={{
         background: "#0C0C0C",
         borderRadius: "48px 48px 0 0",
@@ -265,8 +458,8 @@ const Projects = () => {
         zIndex: 10,
         paddingTop: "80px",
         paddingBottom: "160px",
-        paddingLeft: "48px",
-        paddingRight: "48px",
+        paddingLeft: isMobile ? "24px" : "48px",
+        paddingRight: isMobile ? "24px" : "48px",
       }}
     >
       <div style={{ maxWidth: "1000px", margin: "0 auto 60px" }}>
@@ -297,10 +490,11 @@ const Projects = () => {
       </div>
 
       <div
+        className="projects-stack"
         ref={containerRef}
         style={{
           position: "relative",
-          height: `${projects.length * 100}vh`,
+          height: isMobile ? "auto" : `${projects.length * 100}vh`,
         }}
       >
         {projects.map((project, index) => (
@@ -310,6 +504,7 @@ const Projects = () => {
             index={index}
             total={projects.length}
             scrollYProgress={scrollYProgress}
+            isMobile={isMobile}
           />
         ))}
       </div>
