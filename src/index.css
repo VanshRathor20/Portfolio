@@ -9,11 +9,47 @@
 
 /* ===== HERO SECTION ===== */
 /* Push hero content up and center it */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+}
 section:first-of-type {
   padding-top: 0 !important;
   min-height: 100vh;
   display: flex;
   align-items: center;
+  padding-top: 0 !important;
+  margin-top: 0 !important;
+}
+
+.hero-grid {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  gap: 40px;
+}
+
+.hero-content {
+  flex: 1;
+  max-width: 520px;
+}
+
+.hero-visual-wrap {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-visual {
+  position: relative;
+  width: 100%;
+  max-width: 460px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /* ===== ABOUT SECTION ===== */
@@ -45,5 +81,18 @@ section {
   .max-w-5xl {
     padding-left: 16px !important;
     padding-right: 16px !important;
+  }
+
+  .hero-grid {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-content {
+    max-width: 100%;
+  }
+
+  .hero-visual-wrap {
+    width: 100%;
   }
 }

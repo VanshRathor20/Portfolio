@@ -669,9 +669,9 @@
   .hero {
     display: flex;
     align-items: center;
-    min-height: 100dvh;
-    padding-block: var(--space-24);
-    padding-top: calc(var(--space-20) + 4rem);
+    min-height: 100vh;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
   }
 
   .hero-grid {
