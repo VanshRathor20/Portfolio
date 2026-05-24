@@ -449,6 +449,7 @@ const Projects = () => {
 
   return (
     <section
+      id="projects"
       className="projects-section"
       style={{
         background: "#0C0C0C",

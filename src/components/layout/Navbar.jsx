@@ -3,11 +3,12 @@ import { RiMenuLine, RiCloseLine } from "react-icons/ri";
 import Container from "./Container";
 
 const NAV_LINKS = [
-  { label: "About", href: "#about" },
-  { label: "Projects", href: "#projects" },
-  { label: "Skills", href: "#skills" },
-  { label: "Experience", href: "#experience" },
-  { label: "Contact", href: "#contact" },
+  { label: "Home", id: "home" },
+  { label: "About", id: "about" },
+  { label: "Skills", id: "skills" },
+  { label: "Projects", id: "projects" },
+  { label: "Experience", id: "experience" },
+  { label: "Contact", id: "contact" },
 ];
 
 const Navbar = () => {
@@ -29,20 +30,50 @@ const Navbar = () => {
   }, [mobileOpen]);
 
   const closeMobile = () => setMobileOpen(false);
+  const scrollTo = (id) => {
+    const el = document.getElementById(id);
+    if (el) el.scrollIntoView({ behavior: "smooth" });
+  };
+  const navLinkStyle = {
+    color: "#A1A1AA",
+    textDecoration: "none",
+    fontSize: "14px",
+    fontFamily: "Inter, sans-serif",
+    cursor: "pointer",
+    transition: "color 0.2s",
+  };
 
   return (
     <header className={`navbar ${scrolled ? "is-scrolled" : ""}`}>
       <Container className="navbar-container">
         <nav className="navbar-inner" aria-label="Main navigation">
-          <a href="#hero" className="navbar-logo" onClick={closeMobile}>
+          <span
+            className="navbar-logo"
+            style={{ cursor: "pointer" }}
+            onClick={() => {
+              scrollTo("home");
+              closeMobile();
+            }}
+          >
             Vansh
-          </a>
+          </span>
 
           <div className="navbar-links">
             {NAV_LINKS.map((link) => (
-              <a key={link.href} href={link.href} className="nav-link">
+              <span
+                key={link.id}
+                className="nav-link"
+                onClick={() => scrollTo(link.id)}
+                style={navLinkStyle}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.color = "#fff";
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.color = "#A1A1AA";
+                }}
+              >
                 {link.label}
-              </a>
+              </span>
             ))}
           </div>
 
@@ -62,14 +93,23 @@ const Navbar = () => {
         <Container className="navbar-container">
           <div className="navbar-mobile-inner">
             {NAV_LINKS.map((link) => (
-              <a
-                key={link.href}
-                href={link.href}
+              <span
+                key={link.id}
                 className="nav-link-mobile"
-                onClick={closeMobile}
+                style={navLinkStyle}
+                onClick={() => {
+                  scrollTo(link.id);
+                  closeMobile();
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.color = "#fff";
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.color = "#A1A1AA";
+                }}
               >
                 {link.label}
-              </a>
+              </span>
             ))}
           </div>
         </Container>

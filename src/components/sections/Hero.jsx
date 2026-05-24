@@ -1,5 +1,4 @@
 import { motion, useReducedMotion } from "framer-motion";
-import Container from "../layout/Container";
 import Button from "../ui/Button";
 import { easeOut, transition } from "../../lib/motion";
 import Robo from "../ui/Robo";
@@ -24,8 +23,21 @@ const Hero = () => {
       };
 
   return (
-    <section id="hero" className="hero">
-      <Container>
+    <section id="home" className="hero">
+      <div
+        style={{
+          minHeight: "100vh",
+          display: "flex",
+          alignItems: "center",
+          paddingTop: "80px",
+          paddingBottom: "40px",
+          paddingLeft: "48px",
+          paddingRight: "48px",
+          maxWidth: "1100px",
+          margin: "0 auto",
+          width: "100%",
+        }}
+      >
         <div className="hero-grid">
           <motion.div className="hero-content stack-lg" {...anim}>
             <p className="text-label">FULL-STACK DEVELOPER</p>
@@ -58,7 +70,7 @@ const Hero = () => {
             </div>
           </motion.div>
         </div>
-      </Container>
+      </div>
     </section>
   );
 };

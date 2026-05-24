@@ -1,0 +1,49 @@
+/* ===== GLOBAL MARGIN FIX ===== */
+.max-w-6xl,
+.max-w-5xl,
+.max-w-4xl {
+  max-width: 1100px !important;
+  padding-left: 32px !important;
+  padding-right: 32px !important;
+}
+
+/* ===== HERO SECTION ===== */
+/* Push hero content up and center it */
+section:first-of-type {
+  padding-top: 0 !important;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+/* ===== ABOUT SECTION ===== */
+/* Heading appears twice — fix */
+.about-layout h2:first-child {
+  display: none;
+}
+
+/* ===== TIMELINE FIX ===== */
+/* Center line position */
+.timeline-center-line {
+  left: 50% !important;
+}
+
+/* ===== GLOBAL SECTION SPACING ===== */
+section {
+  padding-left: 32px !important;
+  padding-right: 32px !important;
+}
+
+/* ===== MOBILE ===== */
+@media (max-width: 768px) {
+  section {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+
+  .max-w-6xl,
+  .max-w-5xl {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+}
