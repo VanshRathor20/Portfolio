@@ -3,18 +3,8 @@ import SectionHeading from "../ui/SectionHeading";
 import Button from "../ui/Button";
 import Reveal from "../ui/Reveal";
 import { FiMail } from "react-icons/fi";
-import { FaGithub, FaLinkedin } from "react-icons/fa";
-
-const SOCIAL_LINKS = [
-  { label: "Email", href: "mailto:hello@vansh.dev", Icon: FiMail },
-  { label: "GitHub", href: "https://github.com", Icon: FaGithub },
-  { label: "LinkedIn", href: "https://linkedin.com", Icon: FaLinkedin },
-];
-
-const linkProps = {
-  target: "_blank",
-  rel: "noopener noreferrer",
-};
+import { FaGithub, FaLinkedin, FaInstagram } from "react-icons/fa";
+import { SiLeetcode } from "react-icons/si";
 
 const Contact = () => {
   const handleSubmit = (event) => {
@@ -78,26 +68,104 @@ const Contact = () => {
                 />
               </div>
 
-              <Button type="submit" variant="primary" className="contact-submit">
+              <Button
+                type="submit"
+                variant="primary"
+                className="contact-submit"
+                style={{
+                  width: "100%",
+                  padding: "14px",
+                  background: "transparent",
+                  border: "1px solid #7C3AED",
+                  borderRadius: "10px",
+                  color: "#A78BFA",
+                  fontSize: "13px",
+                  fontFamily: "JetBrains Mono, monospace",
+                  letterSpacing: "0.15em",
+                  textTransform: "uppercase",
+                  cursor: "pointer",
+                  transition: "all 0.3s ease",
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.background = "#7C3AED";
+                  e.currentTarget.style.color = "#fff";
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.background = "transparent";
+                  e.currentTarget.style.color = "#A78BFA";
+                }}
+              >
                 Send
               </Button>
             </form>
           </Reveal>
 
           <Reveal delay={0.1}>
-            <nav className="contact-social" aria-label="Social links">
-              {SOCIAL_LINKS.map(({ label, href, Icon }) => (
-                <a
-                  key={label}
-                  href={href}
-                  className="contact-social-link"
-                  aria-label={label}
-                  {...(label !== "Email" ? linkProps : {})}
-                >
-                  <Icon />
-                </a>
-              ))}
-            </nav>
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "center",
+                gap: "28px",
+                paddingTop: "32px",
+                borderTop: "1px solid #1a1a1a",
+                marginTop: "40px",
+              }}
+            >
+              <a
+                href="https://mail.google.com/mail/?view=cm&to=vanshkumar5887.work@gmail.com"
+                target="_blank"
+                rel="noreferrer"
+                style={{ color: "#555", transition: "color 0.2s" }}
+                onMouseEnter={(e) => (e.currentTarget.style.color = "#fff")}
+                onMouseLeave={(e) => (e.currentTarget.style.color = "#555")}
+              >
+                <FiMail size={20} />
+              </a>
+
+              <a
+                href="https://github.com/VanshRathor20"
+                target="_blank"
+                rel="noreferrer"
+                style={{ color: "#555", transition: "color 0.2s" }}
+                onMouseEnter={(e) => (e.currentTarget.style.color = "#fff")}
+                onMouseLeave={(e) => (e.currentTarget.style.color = "#555")}
+              >
+                <FaGithub size={20} />
+              </a>
+
+              <a
+                href="https://www.linkedin.com/in/vansh-kumar-20-codes"
+                target="_blank"
+                rel="noreferrer"
+                style={{ color: "#555", transition: "color 0.2s" }}
+                onMouseEnter={(e) => (e.currentTarget.style.color = "#0A66C2")}
+                onMouseLeave={(e) => (e.currentTarget.style.color = "#555")}
+              >
+                <FaLinkedin size={20} />
+              </a>
+
+              <a
+                href="https://www.instagram.com/vansh_rathor_20/"
+                target="_blank"
+                rel="noreferrer"
+                style={{ color: "#555", transition: "color 0.2s" }}
+                onMouseEnter={(e) => (e.currentTarget.style.color = "#E1306C")}
+                onMouseLeave={(e) => (e.currentTarget.style.color = "#555")}
+              >
+                <FaInstagram size={20} />
+              </a>
+
+              <a
+                href="https://leetcode.com/u/Vansh_Rathor/"
+                target="_blank"
+                rel="noreferrer"
+                style={{ color: "#555", transition: "color 0.2s" }}
+                onMouseEnter={(e) => (e.currentTarget.style.color = "#FFA116")}
+                onMouseLeave={(e) => (e.currentTarget.style.color = "#555")}
+              >
+                <SiLeetcode size={20} />
+              </a>
+            </div>
           </Reveal>
         </div>
       </Container>
