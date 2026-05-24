@@ -70,6 +70,15 @@ section {
   padding-right: 32px !important;
 }
 
+/* ===== CONTACT LAYOUT ===== */
+.contact-layout {
+  display: flex;
+  gap: 80px;
+  maxwidth: 1100px;
+  margin: 0 auto;
+  padding: 0 48px;
+}
+
 /* ===== MOBILE ===== */
 @media (max-width: 768px) {
   section {
@@ -94,5 +103,11 @@ section {
 
   .hero-visual-wrap {
     width: 100%;
+  }
+
+  .contact-layout {
+    flex-direction: column !important;
+    padding: 60px 20px !important;
+    gap: 48px !important;
   }
 }
