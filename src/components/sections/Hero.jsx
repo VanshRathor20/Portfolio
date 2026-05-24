@@ -1,4 +1,5 @@
 import { motion, useReducedMotion } from "framer-motion";
+import { useState, useEffect } from "react";
 import Button from "../ui/Button";
 import { easeOut, transition } from "../../lib/motion";
 import Robo from "../ui/Robo";
@@ -21,6 +22,15 @@ const Hero = () => {
         animate: { opacity: 1, y: 0 },
         transition: { ...transition, delay: 0.15, ease: easeOut },
       };
+
+  const [roboLoaded, setRoboLoaded] = useState(false);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setRoboLoaded(true);
+    }, 3000);
+    return () => clearTimeout(timer);
+  }, []);
 
   return (
     <section id="home" className="hero">
@@ -64,8 +74,37 @@ const Hero = () => {
             <div className="hero-visual" aria-hidden="true">
               <div className="hero-visual-glow hero-visual-glow--one" />
               <div className="hero-visual-glow hero-visual-glow--two" />
-              <div className="hero-visual-scene">
-                <Robo />
+              <div
+                style={{ position: "relative", width: "100%", height: "100%" }}
+              >
+                {/* SKELETON — shows while loading */}
+                {!roboLoaded && (
+                  <div
+                    style={{
+                      width: "500px",
+                      height: "500px",
+                      borderRadius: "50%",
+                      background:
+                        "linear-gradient(135deg, #111 0%, #1a1a1a 50%, #111 100%)",
+                      backgroundSize: "200% 200%",
+                      animation: "shimmer 1.5s infinite",
+                      margin: "0 auto",
+                    }}
+                  />
+                )}
+
+                {/* ACTUAL ROBOT */}
+                <div
+                  style={{
+                    opacity: roboLoaded ? 1 : 0,
+                    transition: "opacity 0.8s ease",
+                    position: "absolute",
+                    top: 0,
+                    left: 0,
+                  }}
+                >
+                  <Robo onLoad={() => setRoboLoaded(true)} />
+                </div>
               </div>
             </div>
           </motion.div>

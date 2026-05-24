@@ -111,3 +111,27 @@ section {
     gap: 48px !important;
   }
 }
+
+/* shimmer animation used by Robo skeleton */
+@keyframes shimmer {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+.hero-visual-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  min-width: 500px;
+}
+
+@media (max-width: 768px) {
+  .hero-visual-wrap {
+    min-width: unset;
+    width: 100%;
+  }
+}
