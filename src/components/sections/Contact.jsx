@@ -330,39 +330,6 @@ const Contact = () => {
           </form>
         </div>
       </div>
-
-      {/* FOOTER */}
-      {/* <div
-        style={{
-          borderTop: "1px solid #1a1a1a",
-          marginTop: "80px",
-          paddingTop: "28px",
-          maxWidth: "1100px",
-          margin: "80px auto 0",
-          padding: "28px 48px",
-          display: "flex",
-          justifyContent: "space-between",
-        }}
-      >
-        <span
-          style={{
-            fontFamily: "JetBrains Mono, monospace",
-            fontSize: "12px",
-            color: "#333",
-          }}
-        >
-          © 2025 Vansh Rathor
-        </span>
-        <span
-          style={{
-            fontFamily: "JetBrains Mono, monospace",
-            fontSize: "12px",
-            color: "#333",
-          }}
-        >
-          Built with React · Vite · CSS
-        </span>
-      </div> */}
     </section>
   );
 };
