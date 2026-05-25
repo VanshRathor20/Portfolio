@@ -113,10 +113,9 @@ const Skills = () => {
               <div
                 style={{
                   display: "flex",
-                  overflowX: "auto",
-                  paddingTop: "4px",
-                  paddingBottom: "6px",
-                  WebkitOverflowScrolling: "touch",
+                  flexWrap: "wrap",
+                  gap: "10px",
+                  paddingBottom: "0",
                 }}
               >
                 {group.badges.map((badge, bIndex) => (
