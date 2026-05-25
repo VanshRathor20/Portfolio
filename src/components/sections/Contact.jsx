@@ -47,12 +47,12 @@ const Contact = () => {
               letterSpacing: "-0.03em",
               lineHeight: "1.1",
               margin: 0,
-              marginBottom: "32px",
+              marginBottom: "12px",
             }}
           >
-            <span style={{ color: "#F0F0F0" }}>Let's work</span>
+            <span style={{ color: "#F0F0F0" }}>Let’s Build</span>
             <br />
-            <span style={{ color: "#7C3AED" }}>together.</span>
+            <span style={{ color: "#7C3AED" }}>Something Great.</span>
           </h2>
 
           <p
@@ -64,8 +64,12 @@ const Contact = () => {
               marginBottom: "40px",
             }}
           >
-            Open to full-time roles and freelance projects. Drop me a message
-            and I'll get back within 24 hours.
+            I’m currently open to internships, freelance work, and exciting
+            collaboration opportunities.
+            <br />
+            <br />
+            Whether you have a project idea, job opportunity, or just want to
+            connect — feel free to reach out.
           </p>
 
           <a
@@ -78,7 +82,7 @@ const Contact = () => {
               color: "#7C3AED",
               textDecoration: "none",
               display: "block",
-              marginBottom: "40px",
+              marginBottom: "50px",
               transition: "color 0.2s",
             }}
             onMouseEnter={(e) => (e.currentTarget.style.color = "#fff")}
@@ -166,7 +170,7 @@ const Contact = () => {
         </div>
 
         {/* RIGHT SIDE */}
-        <div className="contact-right" style={{ flex: "1.2" }}>
+        <div className="contact-right" style={{ flex: "1.2", marginTop:"40px" }}>
           <form onSubmit={handleSubmit} noValidate>
             <div style={{ marginBottom: "20px" }}>
               <label
