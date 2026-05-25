@@ -171,26 +171,3 @@ section {
     box-sizing: border-box !important;
   }
 }
-
-/* Scrollbar styling */
-::-webkit-scrollbar {
-  width: 4px;
-}
-
-::-webkit-scrollbar-track {
-  background: #080808;
-}
-
-::-webkit-scrollbar-thumb {
-  background: #7c3aed;
-  border-radius: 999px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: #6d28d9;
-}
-
-* {
-  scrollbar-width: thin;
-  scrollbar-color: #7c3aed #080808;
-}
