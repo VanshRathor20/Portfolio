@@ -4,8 +4,8 @@ export default function Robo({ onLoad }) {
   return (
     <div
       style={{
-        width: "500px",
-        height: "500px",
+        width: "min(500px, 90vw)",
+        height: "min(500px, 90vw)",
         position: "relative",
       }}
     >
