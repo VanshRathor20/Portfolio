@@ -10,8 +10,10 @@ import {
   FaHtml5,
 } from "react-icons/fa";
 import {
+  SiGithub,
   SiNextdotjs,
   SiTypescript,
+  SiJavascript,
   SiTailwindcss,
   SiExpress,
   SiGraphql,
@@ -33,6 +35,7 @@ const GROUPS = [
       { name: "React", Icon: FaReact, color: "#61DAFB" },
       { name: "Next.js", Icon: SiNextdotjs, color: "#ffffff" },
       { name: "TypeScript", Icon: SiTypescript, color: "#3178C6" },
+      { name: "JavaScript", Icon: SiJavascript, color: "#F7DF1E" },
       { name: "Tailwind CSS", Icon: SiTailwindcss, color: "#38BDF8" },
       { name: "HTML & CSS", Icon: FaHtml5, color: "#E34F26" },
     ],
@@ -60,6 +63,7 @@ const GROUPS = [
     label: "Workflow",
     badges: [
       { name: "Git", Icon: FaGitAlt, color: "#F05032" },
+      { name: "GitHub", Icon: SiGithub, color: "#ffffff" },
       // { name: "Docker", Icon: FaDocker, color: "#2496ED" },
       { name: "Vercel", Icon: SiVercel, color: "#ffffff" },
       { name: "Figma", Icon: SiFigma, color: "#F24E1E" },
