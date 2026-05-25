@@ -52,20 +52,22 @@ const Hero = () => {
           <motion.div className="hero-content stack-lg" {...anim}>
             <p className="text-label">FULL-STACK DEVELOPER</p>
 
-            <h1 className="text-display">Full-stack apps, shipped fast.</h1>
+            <h1 className="text-display">
+              Fast. Clean. Modern web experiences.
+            </h1>
 
             <p className="text-body-lg max-w-prose">
-              Full stack developer focused on modern web applications,
-              interactive interfaces, and performant backend systems. I build
-              products that look premium and feel seamless.
+              Full Stack Developer building scalable and visually polished
+              applications with modern frontend and backend technologies.
             </p>
 
             <div className="hero-actions">
               <Button href="#projects" variant="primary">
-                View My Work
+                View Projects
               </Button>
+
               <Button href="#contact" variant="secondary">
-                Let's Talk
+                Let’s Connect
               </Button>
             </div>
           </motion.div>
