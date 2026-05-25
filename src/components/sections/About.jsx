@@ -81,25 +81,24 @@ const About = () => {
 
           <div className="about-right" style={{ width: "55%" }}>
             <Reveal delay={0.08} className="about-bio">
-              <h3 className="text-subheading">I build things for the web.</h3>
+              <h3 className="text-subheading">
+                Full Stack Developer focused on clean UI & scalable systems.
+              </h3>
 
               <p className="text-body-lg" style={{ color: "#A1A1AA" }}>
-                I'm Vansh Rathor, a Full Stack Developer passionate about
-                building modern, scalable, and interactive web applications with
-                clean design and smooth user experiences.
+                I’m Vansh Rathor, a Full Stack Developer passionate about
+                building fast, scalable, and visually polished web applications.
               </p>
 
               <p className="text-body" style={{ color: "#A1A1AA" }}>
-                I enjoy creating visually engaging digital products using React,
-                JavaScript, Node.js, and modern frontend technologies. Currently
-                pursuing B.Tech at IIMT Engineering College, Meerut - graduating
-                2027.
+                I specialize in creating responsive user experiences using
+                React, JavaScript, Node.js, and modern frontend technologies.
               </p>
 
               <p className="text-body" style={{ color: "#A1A1AA" }}>
-                Previously built official websites for Tyrano Softwares during a
-                1-year internship. I care about every detail - from clean code
-                to smooth animations.
+                Currently pursuing B.Tech in Computer Science at IIMT
+                Engineering College, Meerut (2023 – 2027). Previously worked as
+                a Frontend Developer Intern at Tyrano Softwares.
               </p>
 
               <a
