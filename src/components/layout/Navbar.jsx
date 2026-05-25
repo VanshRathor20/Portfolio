@@ -4,6 +4,15 @@ import { RiMenuLine, RiCloseLine } from "react-icons/ri";
 import Container from "./Container";
 import logo from "../../assets/logo.png";
 
+import {
+  FaHome,
+  FaUser,
+  FaCode,
+  FaProjectDiagram,
+  FaBriefcase,
+  FaEnvelope,
+} from "react-icons/fa";
+
 const NAV_LINKS = [
   { label: "Home", id: "home" },
   { label: "About", id: "about" },
@@ -12,6 +21,15 @@ const NAV_LINKS = [
   { label: "Experience", id: "experience" },
   { label: "Contact", id: "contact" },
 ];
+
+const ICONS = {
+  home: FaHome,
+  about: FaUser,
+  skills: FaCode,
+  projects: FaProjectDiagram,
+  experience: FaBriefcase,
+  contact: FaEnvelope,
+};
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -34,6 +52,22 @@ const Navbar = () => {
       document.body.style.overflow = "";
     };
   }, [mobileOpen]);
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia("(min-width: 768px)");
+
+    const handleBreakpointChange = (event) => {
+      if (event.matches) {
+        setMobileOpen(false);
+      }
+    };
+
+    handleBreakpointChange(mediaQuery);
+    mediaQuery.addEventListener("change", handleBreakpointChange);
+
+    return () =>
+      mediaQuery.removeEventListener("change", handleBreakpointChange);
+  }, []);
 
   const closeMobile = () => setMobileOpen(false);
 
@@ -116,15 +150,18 @@ const Navbar = () => {
               <img
                 src={logo}
                 alt="Vansh logo"
-                style={{ width: "200px", height: "100px", objectFit: "contain" }}
+                style={{
+                  width: "200px",
+                  height: "100px",
+                  objectFit: "contain",
+                }}
               />
             </span>
 
-            {/* DESKTOP LINKS */}
+            {/* DESKTOP LINKS (labels only) */}
             <div
-              className="navbar-links"
+              className="navbar-links hidden md:flex"
               style={{
-                display: "flex",
                 alignItems: "center",
                 gap: "34px",
               }}
@@ -147,10 +184,10 @@ const Navbar = () => {
               ))}
             </div>
 
-            {/* MOBILE TOGGLE */}
+            {/* MOBILE TOGGLE (visible only on small screens) */}
             <button
               type="button"
-              className="navbar-toggle"
+              className="navbar-toggle md:hidden p-2 rounded-md"
               onClick={() => setMobileOpen((open) => !open)}
               aria-expanded={mobileOpen}
               aria-label={mobileOpen ? "Close menu" : "Open menu"}
@@ -159,7 +196,6 @@ const Navbar = () => {
                 border: "none",
                 color: "#fff",
                 cursor: "pointer",
-                display: "none",
               }}
             >
               {mobileOpen ? (
@@ -186,42 +222,66 @@ const Navbar = () => {
               backdropFilter: "blur(18px)",
               border: "1px solid rgba(255,255,255,0.06)",
               borderRadius: "20px",
-              padding: "24px",
+              padding: "18px 20px",
             }}
           >
             <div
               className="navbar-mobile-inner"
               style={{
                 display: "flex",
-                flexDirection: "column",
-                gap: "22px",
+                flexDirection: "row",
+                gap: "14px",
+                justifyContent: "center",
+                alignItems: "center",
+                flexWrap: "nowrap",
               }}
             >
-              {NAV_LINKS.map((link) => (
-                <span
-                  key={link.id}
-                  className="nav-link-mobile"
-                  style={{
-                    color: "#A1A1AA",
-                    fontSize: "15px",
-                    fontWeight: "500",
-                    cursor: "pointer",
-                    transition: "0.3s",
-                  }}
-                  onClick={() => {
-                    scrollTo(link.id);
-                    closeMobile();
-                  }}
-                  onMouseEnter={(e) => {
-                    e.currentTarget.style.color = "#fff";
-                  }}
-                  onMouseLeave={(e) => {
-                    e.currentTarget.style.color = "#A1A1AA";
-                  }}
-                >
-                  {link.label}
-                </span>
-              ))}
+              {NAV_LINKS.map((link) => {
+                const Icon = ICONS[link.id];
+
+                return (
+                  <button
+                    key={link.id}
+                    type="button"
+                    onClick={() => {
+                      scrollTo(link.id);
+                      closeMobile();
+                    }}
+                    aria-label={link.label}
+                    title={link.label}
+                    className="mobile-nav-icon"
+                    style={{
+                      width: "48px",
+                      height: "48px",
+                      borderRadius: "9999px",
+                      display: "inline-flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      background: "rgba(255,255,255,0.04)",
+                      backdropFilter: "blur(10px)",
+                      border: "1px solid rgba(255,255,255,0.06)",
+                      color: "#fff",
+                      cursor: "pointer",
+                      transition: "transform 180ms ease, box-shadow 180ms ease",
+                      boxShadow: "0 6px 18px rgba(0,0,0,0.35)",
+                    }}
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.transform =
+                        "translateY(-3px) scale(1.04)";
+                      e.currentTarget.style.boxShadow =
+                        "0 10px 30px rgba(0,0,0,0.45)";
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.transform = "none";
+                      e.currentTarget.style.boxShadow =
+                        "0 6px 18px rgba(0,0,0,0.35)";
+                    }}
+                  >
+                    <Icon size={18} />
+                    <span className="sr-only">{link.label}</span>
+                  </button>
+                );
+              })}
             </div>
           </motion.div>
         )}
