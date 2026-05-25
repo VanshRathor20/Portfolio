@@ -1,5 +1,8 @@
 import { useEffect, useRef, useState } from "react";
 import { motion, useScroll, useTransform, useSpring } from "framer-motion";
+import tyranoImg from "../../assets/tyrano-software.png";
+import emartImg from "../../assets/emart-home.png";
+const financeImg = new URL("../../assets/finance-dashboard.png", import.meta.url).href;
 
 const projects = [
   {
@@ -25,6 +28,14 @@ const projects = [
     live: "https://finance-dashboard-001.netlify.app/dashboard",
     imgMain: financeImg,
     comingSoon: false,
+  },
+  {
+    number: "04",
+    category: "REAL-TIME APP",
+    title: "Chat Application",
+    live: "#",
+    imgMain: null,
+    comingSoon: true,
   },
 ];
 
