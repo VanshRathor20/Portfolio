@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import { RiMenuLine, RiCloseLine } from "react-icons/ri";
 import Container from "./Container";
 
@@ -89,31 +90,50 @@ const Navbar = () => {
         </nav>
       </Container>
 
-      <div className={`navbar-mobile ${mobileOpen ? "is-open" : ""}`}>
-        <Container className="navbar-container">
-          <div className="navbar-mobile-inner">
-            {NAV_LINKS.map((link) => (
-              <span
-                key={link.id}
-                className="nav-link-mobile"
-                style={navLinkStyle}
-                onClick={() => {
-                  scrollTo(link.id);
-                  closeMobile();
-                }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.color = "#fff";
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.color = "#A1A1AA";
-                }}
-              >
-                {link.label}
-              </span>
-            ))}
-          </div>
-        </Container>
-      </div>
+      <AnimatePresence>
+        {mobileOpen && (
+          <motion.div
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -10 }}
+            transition={{ duration: 0.2 }}
+            style={{
+              position: "fixed",
+              top: "56px",
+              left: 0,
+              right: 0,
+              background: "#0A0A0A",
+              borderBottom: "1px solid #1a1a1a",
+              zIndex: 999,
+              padding: "16px 24px 24px",
+            }}
+          >
+            <Container className="navbar-container">
+              <div className="navbar-mobile-inner">
+                {NAV_LINKS.map((link) => (
+                  <span
+                    key={link.id}
+                    className="nav-link-mobile"
+                    style={navLinkStyle}
+                    onClick={() => {
+                      scrollTo(link.id);
+                      closeMobile();
+                    }}
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.color = "#fff";
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.color = "#A1A1AA";
+                    }}
+                  >
+                    {link.label}
+                  </span>
+                ))}
+              </div>
+            </Container>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </header>
   );
 };
