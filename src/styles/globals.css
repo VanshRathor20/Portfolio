@@ -677,8 +677,14 @@
   .hero-grid {
     display: grid;
     grid-template-columns: 1fr;
-    gap: var(--space-16);
+    gap: var(--space-12);
     align-items: center;
+  }
+
+  @media (min-width: 640px) {
+    .hero-grid {
+      gap: var(--space-16);
+    }
   }
 
   @media (min-width: 1024px) {
@@ -688,7 +694,14 @@
     }
   }
 
-  @media (max-width: 1023px) {
+  @media (max-width: 639px) {
+    .hero {
+      padding-top: calc(var(--space-8) + 5rem);
+      min-height: auto;
+    }
+  }
+
+  @media (min-width: 640px) and (max-width: 1023px) {
     .hero {
       padding-top: calc(var(--space-16) + 4rem);
       min-height: auto;
