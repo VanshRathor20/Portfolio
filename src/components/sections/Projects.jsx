@@ -7,7 +7,7 @@ const projects = [
     category: "COMPANY WEBSITE",
     title: "Tyrano Softwares",
     live: "https://www.tyranosoftwares.com/",
-    imgMain: "/src/assets/tyrano-software.png",
+    imgMain: tyranoImg,
     comingSoon: false,
   },
   {
@@ -15,7 +15,7 @@ const projects = [
     category: "FULL-STACK APP",
     title: "E-Commerce Platform",
     live: "https://e-mart-website.netlify.app/",
-    imgMain: "/src/assets/emart-home.png",
+    imgMain: emartImg,
     comingSoon: false,
   },
   {
@@ -23,16 +23,8 @@ const projects = [
     category: "FINANCE DASHBOARD",
     title: "Expense Tracker",
     live: "https://finance-dashboard-001.netlify.app/dashboard",
-    imgMain: "/src/assets/finance dashboard.png",
+    imgMain: financeImg,
     comingSoon: false,
-  },
-  {
-    number: "04",
-    category: "REAL-TIME APP",
-    title: "Chat Application",
-    live: "#",
-    imgMain: null,
-    comingSoon: true,
   },
 ];
 
