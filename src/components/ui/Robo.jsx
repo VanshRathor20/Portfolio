@@ -4,9 +4,10 @@ export default function Robo({ onLoad }) {
   return (
     <div
       style={{
-        width: "min(500px, 90vw)",
-        height: "min(500px, 90vw)",
+        width: "clamp(320px, 55vw, 500px)",
+        height: "clamp(320px, 55vw, 500px)",
         position: "relative",
+        overflow: "hidden",
       }}
     >
       <Spline

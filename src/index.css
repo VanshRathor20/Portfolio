@@ -142,3 +142,15 @@ section {
   flex: 1;
   min-width: 500px;
 }
+@media (max-width: 1024px) {
+  .hero-visual-wrap {
+    min-width: unset !important;
+    max-width: 45vw !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-visual-wrap {
+    max-width: 100% !important;
+  }
+}
