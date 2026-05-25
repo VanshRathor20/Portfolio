@@ -192,7 +192,13 @@ const MobileStickyCard = ({ project }) => {
   );
 };
 
-const DesktopStickyCard = ({ project, index, total, scrollYProgress }) => {
+const DesktopStickyCard = ({
+  project,
+  index,
+  total,
+  scrollYProgress,
+  isMobile,
+}) => {
   const start = index / total;
   const end = (index + 1) / total;
   const tiltDirection = index % 2 === 0 ? -1 : 1;
@@ -238,7 +244,7 @@ const DesktopStickyCard = ({ project, index, total, scrollYProgress }) => {
       style={{
         position: "sticky",
         top: `${100 + index * 24}px`,
-        height: "85vh",
+        height: "min(76vh, 600px)",
         maxWidth: "1000px",
         margin: "0 auto 16px",
         borderRadius: "24px",
@@ -345,7 +351,8 @@ const DesktopStickyCard = ({ project, index, total, scrollYProgress }) => {
           <div
             style={{
               width: "100%",
-              height: "100%",
+              height: isMobile ? "160px" : "55vh",
+              maxHeight: "400px",
               background: "#0a0a0a",
               border: "1px solid #1a1a1a",
               borderRadius: "14px",
@@ -427,6 +434,7 @@ const StickyCard = ({ project, index, total, scrollYProgress, isMobile }) => {
       index={index}
       total={total}
       scrollYProgress={scrollYProgress}
+      isMobile={isMobile}
     />
   );
 };
@@ -495,7 +503,7 @@ const Projects = () => {
         ref={containerRef}
         style={{
           position: "relative",
-          height: isMobile ? "auto" : `${projects.length * 100}vh`,
+          height: isMobile ? "auto" : `${projects.length * 95}vh`,
         }}
       >
         {projects.map((project, index) => (
