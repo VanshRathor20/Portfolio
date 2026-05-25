@@ -18,15 +18,14 @@ const Contact = () => {
       <div
         className="contact-layout"
         style={{
-          display: "flex",
           gap: "80px",
           maxWidth: "1100px",
           margin: "0 auto",
-          padding: "0 48px",
+          padding: "96px 48px",
         }}
       >
         {/* LEFT SIDE */}
-        <div style={{ flex: "1" }}>
+        <div className="contact-left" style={{ flex: "1" }}>
           <p
             style={{
               fontFamily: "JetBrains Mono, monospace",
@@ -167,7 +166,7 @@ const Contact = () => {
         </div>
 
         {/* RIGHT SIDE */}
-        <div style={{ flex: "1.2" }}>
+        <div className="contact-right" style={{ flex: "1.2" }}>
           <form onSubmit={handleSubmit} noValidate>
             <div style={{ marginBottom: "20px" }}>
               <label
