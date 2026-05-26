@@ -68,7 +68,11 @@ export const verifyRecaptcha = async (token) => {
   } catch (error) {
     console.error("reCAPTCHA verification error:", error && error.message);
     if (error && error.response) {
-      console.error("reCAPTCHA error response:", error.response.status, error.response.data);
+      console.error(
+        "reCAPTCHA error response:",
+        error.response.status,
+        error.response.data,
+      );
     }
     return {
       success: false,

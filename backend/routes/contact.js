@@ -53,7 +53,8 @@ router.post("/", contactLimiter, async (req, res, next) => {
         success: false,
         message: recaptchaResult.error || "reCAPTCHA verification failed",
         errorCodes:
-          recaptchaResult.details && Array.isArray(recaptchaResult.details["error-codes"])
+          recaptchaResult.details &&
+          Array.isArray(recaptchaResult.details["error-codes"])
             ? recaptchaResult.details["error-codes"]
             : [],
         hostname: recaptchaResult.details?.hostname,

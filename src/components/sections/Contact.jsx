@@ -23,7 +23,10 @@ const Contact = () => {
 
   // Debug: log Vite env for reCAPTCHA (helps detect missing env values)
   useEffect(() => {
-    console.debug("VITE_RECAPTCHA_SITE_KEY:", RECAPTCHA_SITE_KEY ? "[present]" : "[missing]");
+    console.debug(
+      "VITE_RECAPTCHA_SITE_KEY:",
+      RECAPTCHA_SITE_KEY ? "[present]" : "[missing]",
+    );
   }, [RECAPTCHA_SITE_KEY]);
 
   // Handle input changes
@@ -96,7 +99,12 @@ const Contact = () => {
 
     // Read token from reCAPTCHA widget
     const recaptchaToken = recaptchaRef.current.getValue();
-    console.debug("reCAPTCHA token present:", !!recaptchaToken, "(length)", recaptchaToken ? recaptchaToken.length : 0);
+    console.debug(
+      "reCAPTCHA token present:",
+      !!recaptchaToken,
+      "(length)",
+      recaptchaToken ? recaptchaToken.length : 0,
+    );
     if (recaptchaToken) {
       setCaptchaToken(recaptchaToken);
     }
@@ -135,7 +143,12 @@ const Contact = () => {
         console.error("Failed to parse JSON response from backend:", err);
         data = { success: false, message: "Invalid server response" };
       }
-      console.debug("Contact API response status:", response.status, "body:", data);
+      console.debug(
+        "Contact API response status:",
+        response.status,
+        "body:",
+        data,
+      );
 
       if (data.success) {
         toast.success("Message sent — thank you!", { id: toastId });
@@ -154,8 +167,14 @@ const Contact = () => {
         }, 5000);
       } else {
         console.warn("Contact API returned error:", data);
-        const recaptchaCodes = Array.isArray(data.errorCodes) && data.errorCodes.length > 0 ? ` (${data.errorCodes.join(", ")})` : "";
-        toast.error((data.message || "Failed to send message") + recaptchaCodes, { id: toastId });
+        const recaptchaCodes =
+          Array.isArray(data.errorCodes) && data.errorCodes.length > 0
+            ? ` (${data.errorCodes.join(", ")})`
+            : "";
+        toast.error(
+          (data.message || "Failed to send message") + recaptchaCodes,
+          { id: toastId },
+        );
         setErrorMessage(
           data.message || data.errors?.[0] || "Failed to send message",
         );
