@@ -102,7 +102,7 @@ const About = () => {
               </p>
 
               <a
-                href="/resume.pdf"
+                href="/primary_resume.pdf"
                 download
                 style={{
                   display: "inline-flex",
