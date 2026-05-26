@@ -9,6 +9,7 @@ import {
   // FaDocker,
   FaHtml5,
 } from "react-icons/fa";
+import { FaJava } from "react-icons/fa";
 import {
   SiGithub,
   SiNextdotjs,
@@ -46,6 +47,7 @@ const GROUPS = [
       { name: "Node.js", Icon: FaNodeJs, color: "#68A063" },
       { name: "Express", Icon: SiExpress, color: "#ffffff" },
       { name: "REST", Icon: TbApi, color: "#7C3AED" },
+      { name: "Java", Icon: FaJava, color: "#f89820" },
       // { name: "GraphQL", Icon: SiGraphql, color: "#E10098" },
       // { name: "Socket.io", Icon: SiSocketdotio, color: "#ffffff" },
     ],
