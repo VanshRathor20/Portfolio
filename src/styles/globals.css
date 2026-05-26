@@ -10,18 +10,18 @@
    Design tokens
    ───────────────────────────────────────────── */
 :root {
-  /* Background & surfaces */
-  --color-bg: #0a0a0a;
-  --color-surface: #0f0f0f;
-  --color-surface-raised: #141414;
-  --color-border: #1f1f1f;
-  --color-border-strong: #3f3f46;
-
-  /* Text */
-  --color-text: #ececec;
-  --color-text-soft: #ececec;
-  --color-text-muted: #71717a;
-  --color-text-subtle: #3f3f46;
+  /* Background & surfaces — thoda light kiya */
+  --color-bg: #111111;             
+  --color-surface: #1a1a1a;        
+  --color-surface-raised: #222222;  
+  --color-border: #2a2a2a;         
+  --color-border-strong: #4a4a52;   
+ 
+  /* Text — better visibility */
+  --color-text: #f5f5f5;          
+  --color-text-soft: #f0f0f0;       
+  --color-text-muted: #a1a1aa;      
+  --color-text-subtle: #52525b;
 
   /* Accent — highlights only */
   --color-accent: #7c3aed;

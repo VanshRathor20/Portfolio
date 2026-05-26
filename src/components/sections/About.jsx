@@ -86,7 +86,7 @@ const About = () => {
               </h3>
 
               <p className="text-body-lg" style={{ color: "#A1A1AA" }}>
-                I’m Vansh Rathor, a Full Stack Developer passionate about
+                I’m Vansh, a Full Stack Developer passionate about
                 building fast, scalable, and visually polished web applications.
               </p>
 

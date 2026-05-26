@@ -32,7 +32,7 @@ const Footer = () => {
             letterSpacing: "0.05em",
           }}
         >
-          © {year} Vansh Rathor
+          © {year} Vansh 
         </p>
 
         {/* CENTER — Social icons */}
@@ -113,7 +113,7 @@ const Footer = () => {
         <span
           style={{ fontFamily: "JetBrains Mono, monospace", fontSize: "13px" }}
         >
-          &lt;/&gt; with ❤️ by Vansh Rathor
+          &lt;/&gt; with ❤️ by Vansh 
         </span>
       </div>
     </footer>
