@@ -11,8 +11,8 @@ export default function Robo({ onLoad }) {
       }}
     >
       <Spline
-        onLoad={onLoad}
         scene="https://prod.spline.design/i-Dau1OxM2uetrTH/scene.splinecode"
+        onLoad={onLoad}
         style={{
           width: "100%",
           height: "100%",
