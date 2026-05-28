@@ -58,7 +58,7 @@ const Navbar = () => {
 
   const navLinkStyle = {
     position: "relative",
-    color: "#A1A1AA",
+    color: "#B3CFE5",
     textDecoration: "none",
     fontSize: "14px",
     fontWeight: "500",
@@ -86,12 +86,12 @@ const Navbar = () => {
         <div
           style={{
             background: scrolled
-              ? "rgba(10,10,10,0.75)"
-              : "rgba(10,10,10,0.55)",
+              ? "rgba(10, 25, 49, 0.75)"
+              : "rgba(10, 25, 49, 0.55)",
             backdropFilter: "blur(14px)",
             border: scrolled
-              ? "1px solid rgba(255,255,255,0.08)"
-              : "1px solid rgba(255,255,255,0.05)",
+              ? "1px solid rgba(74, 127, 167, 0.08)"
+              : "1px solid rgba(74, 127, 167, 0.05)",
             borderRadius: "22px",
             transition: "all 0.3s ease",
             boxShadow: scrolled ? "0 10px 40px rgba(0,0,0,0.35)" : "none",
@@ -140,7 +140,7 @@ const Navbar = () => {
                       e.currentTarget.style.color = "#fff";
                     }}
                     onMouseLeave={(e) => {
-                      e.currentTarget.style.color = "#A1A1AA";
+                      e.currentTarget.style.color = "#B3CFE5";
                     }}
                   >
                     {link.label}
@@ -166,9 +166,9 @@ const Navbar = () => {
             left: "12px",
             right: "12px",
             zIndex: 1000,
-            background: "rgba(12,12,12,0.92)",
+            background: "rgba(10, 25, 49, 0.92)",
             backdropFilter: "blur(18px)",
-            border: "1px solid rgba(255,255,255,0.08)",
+            border: "1px solid rgba(74, 127, 167, 0.08)",
             borderRadius: "9999px",
             padding: "10px 12px",
             display: "flex",
@@ -200,12 +200,12 @@ const Navbar = () => {
                   justifyContent: "center",
                   flexShrink: 0,
                   background: isActive
-                    ? "rgba(139,92,246,0.85)"
+                    ? "rgba(74, 127, 167, 0.85)"
                     : "rgba(255,255,255,0.05)",
                   border: isActive
-                    ? "1px solid rgba(139,92,246,0.4)"
+                    ? "1px solid rgba(74, 127, 167, 0.4)"
                     : "1px solid rgba(255,255,255,0.07)",
-                  color: isActive ? "#fff" : "#a1a1aa",
+                  color: isActive ? "#fff" : "#B3CFE5",
                   cursor: "pointer",
                   transition:
                     "background 0.25s ease, color 0.25s ease, border 0.25s ease",

@@ -219,7 +219,7 @@ const Contact = () => {
             style={{
               fontFamily: "JetBrains Mono, monospace",
               fontSize: "12px",
-              color: "#7C3AED",
+              color: "#4A7FA7",
               letterSpacing: "0.2em",
               textTransform: "uppercase",
               marginBottom: "16px",
@@ -239,15 +239,15 @@ const Contact = () => {
               marginBottom: "12px",
             }}
           >
-            <span style={{ color: "#F0F0F0" }}>Let’s Build</span>
+            <span style={{ color: "#F6FAFD" }}>Let’s Build</span>
             <br />
-            <span style={{ color: "#7C3AED" }}>Something Great.</span>
+            <span style={{ color: "#4A7FA7" }}>Something Great.</span>
           </h2>
 
           <p
             style={{
               fontFamily: "Inter, sans-serif",
-              color: "#555",
+              color: "#B3CFE5",
               fontSize: "14px",
               lineHeight: "1.8",
               marginBottom: "40px",
@@ -268,14 +268,14 @@ const Contact = () => {
             style={{
               fontFamily: "JetBrains Mono, monospace",
               fontSize: "13px",
-              color: "#7C3AED",
+              color: "#4A7FA7",
               textDecoration: "none",
               display: "block",
               marginBottom: "50px",
               transition: "color 0.2s",
             }}
             onMouseEnter={(e) => (e.currentTarget.style.color = "#fff")}
-            onMouseLeave={(e) => (e.currentTarget.style.color = "#7C3AED")}
+            onMouseLeave={(e) => (e.currentTarget.style.color = "#4A7FA7")}
           >
             vanshkumar5887.work@gmail.com ↗
           </a>
@@ -286,12 +286,12 @@ const Contact = () => {
               target="_blank"
               rel="noreferrer"
               style={{
-                color: "#444",
+                color: "#B3CFE5",
                 transition: "color 0.2s",
                 cursor: "pointer",
               }}
-              onMouseEnter={(e) => (e.currentTarget.style.color = "#7C3AED")}
-              onMouseLeave={(e) => (e.currentTarget.style.color = "#444")}
+              onMouseEnter={(e) => (e.currentTarget.style.color = "#4A7FA7")}
+              onMouseLeave={(e) => (e.currentTarget.style.color = "#B3CFE5")}
             >
               <FiMail size={20} />
             </a>
@@ -301,12 +301,12 @@ const Contact = () => {
               target="_blank"
               rel="noreferrer"
               style={{
-                color: "#444",
+                color: "#B3CFE5",
                 transition: "color 0.2s",
                 cursor: "pointer",
               }}
               onMouseEnter={(e) => (e.currentTarget.style.color = "#ffffff")}
-              onMouseLeave={(e) => (e.currentTarget.style.color = "#444")}
+              onMouseLeave={(e) => (e.currentTarget.style.color = "#B3CFE5")}
             >
               <FaGithub size={20} />
             </a>
@@ -316,12 +316,12 @@ const Contact = () => {
               target="_blank"
               rel="noreferrer"
               style={{
-                color: "#444",
+                color: "#B3CFE5",
                 transition: "color 0.2s",
                 cursor: "pointer",
               }}
               onMouseEnter={(e) => (e.currentTarget.style.color = "#0A66C2")}
-              onMouseLeave={(e) => (e.currentTarget.style.color = "#444")}
+              onMouseLeave={(e) => (e.currentTarget.style.color = "#B3CFE5")}
             >
               <FaLinkedin size={20} />
             </a>
@@ -331,12 +331,12 @@ const Contact = () => {
               target="_blank"
               rel="noreferrer"
               style={{
-                color: "#444",
+                color: "#B3CFE5",
                 transition: "color 0.2s",
                 cursor: "pointer",
               }}
               onMouseEnter={(e) => (e.currentTarget.style.color = "#E1306C")}
-              onMouseLeave={(e) => (e.currentTarget.style.color = "#444")}
+              onMouseLeave={(e) => (e.currentTarget.style.color = "#B3CFE5")}
             >
               <FaInstagram size={20} />
             </a>
@@ -346,12 +346,12 @@ const Contact = () => {
               target="_blank"
               rel="noreferrer"
               style={{
-                color: "#444",
+                color: "#B3CFE5",
                 transition: "color 0.2s",
                 cursor: "pointer",
               }}
               onMouseEnter={(e) => (e.currentTarget.style.color = "#FFA116")}
-              onMouseLeave={(e) => (e.currentTarget.style.color = "#444")}
+              onMouseLeave={(e) => (e.currentTarget.style.color = "#B3CFE5")}
             >
               <SiLeetcode size={20} />
             </a>
@@ -371,7 +371,7 @@ const Contact = () => {
                 style={{
                   fontFamily: "JetBrains Mono, monospace",
                   fontSize: "12px",
-                  color: "#444",
+                  color: "#B3CFE5",
                   letterSpacing: "0.2em",
                   textTransform: "uppercase",
                   display: "block",
@@ -391,11 +391,11 @@ const Contact = () => {
                 required
                 style={{
                   width: "100%",
-                  background: "#0a0a0a",
-                  border: "1px solid #1e1e1e",
+                  background: "#0A1931",
+                  border: "1px solid #2a4a6b",
                   borderRadius: "10px",
                   padding: "14px 16px",
-                  color: "#F0F0F0",
+                  color: "#F6FAFD",
                   fontFamily: "Inter, sans-serif",
                   fontSize: "14px",
                   outline: "none",
@@ -404,8 +404,8 @@ const Contact = () => {
                   opacity: status === "loading" ? 0.6 : 1,
                   cursor: status === "loading" ? "not-allowed" : "text",
                 }}
-                onFocus={(e) => (e.currentTarget.style.borderColor = "#7C3AED")}
-                onBlur={(e) => (e.currentTarget.style.borderColor = "#1e1e1e")}
+                onFocus={(e) => (e.currentTarget.style.borderColor = "#4A7FA7")}
+                onBlur={(e) => (e.currentTarget.style.borderColor = "#2a4a6b")}
               />
             </div>
 
@@ -416,7 +416,7 @@ const Contact = () => {
                 style={{
                   fontFamily: "JetBrains Mono, monospace",
                   fontSize: "12px",
-                  color: "#444",
+                  color: "#B3CFE5",
                   letterSpacing: "0.2em",
                   textTransform: "uppercase",
                   display: "block",
@@ -436,11 +436,11 @@ const Contact = () => {
                 required
                 style={{
                   width: "100%",
-                  background: "#0a0a0a",
-                  border: "1px solid #1e1e1e",
+                  background: "#0A1931",
+                  border: "1px solid #2a4a6b",
                   borderRadius: "10px",
                   padding: "14px 16px",
-                  color: "#F0F0F0",
+                  color: "#F6FAFD",
                   fontFamily: "Inter, sans-serif",
                   fontSize: "14px",
                   outline: "none",
@@ -449,8 +449,8 @@ const Contact = () => {
                   opacity: status === "loading" ? 0.6 : 1,
                   cursor: status === "loading" ? "not-allowed" : "text",
                 }}
-                onFocus={(e) => (e.currentTarget.style.borderColor = "#7C3AED")}
-                onBlur={(e) => (e.currentTarget.style.borderColor = "#1e1e1e")}
+                onFocus={(e) => (e.currentTarget.style.borderColor = "#4A7FA7")}
+                onBlur={(e) => (e.currentTarget.style.borderColor = "#2a4a6b")}
               />
             </div>
 
@@ -461,7 +461,7 @@ const Contact = () => {
                 style={{
                   fontFamily: "JetBrains Mono, monospace",
                   fontSize: "12px",
-                  color: "#444",
+                  color: "#B3CFE5",
                   letterSpacing: "0.2em",
                   textTransform: "uppercase",
                   display: "block",
@@ -481,11 +481,11 @@ const Contact = () => {
                 required
                 style={{
                   width: "100%",
-                  background: "#0a0a0a",
-                  border: "1px solid #1e1e1e",
+                  background: "#0A1931",
+                  border: "1px solid #2a4a6b",
                   borderRadius: "10px",
                   padding: "14px 16px",
-                  color: "#F0F0F0",
+                  color: "#F6FAFD",
                   fontFamily: "Inter, sans-serif",
                   fontSize: "14px",
                   outline: "none",
@@ -495,8 +495,8 @@ const Contact = () => {
                   opacity: status === "loading" ? 0.6 : 1,
                   cursor: status === "loading" ? "not-allowed" : "text",
                 }}
-                onFocus={(e) => (e.currentTarget.style.borderColor = "#7C3AED")}
-                onBlur={(e) => (e.currentTarget.style.borderColor = "#1e1e1e")}
+                onFocus={(e) => (e.currentTarget.style.borderColor = "#4A7FA7")}
+                onBlur={(e) => (e.currentTarget.style.borderColor = "#2a4a6b")}
               />
             </div>
 
@@ -528,7 +528,7 @@ const Contact = () => {
                 width: "100%",
                 marginTop: "8px",
                 padding: "14px",
-                background: status === "success" ? "#34d399" : "#7C3AED",
+                background: status === "success" ? "#34d399" : "#4A7FA7",
                 border: "none",
                 borderRadius: "10px",
                 color: "white",
@@ -542,12 +542,12 @@ const Contact = () => {
               }}
               onMouseEnter={(e) => {
                 if (status !== "loading" && status !== "success") {
-                  e.currentTarget.style.background = "#6D28D9";
+                  e.currentTarget.style.background = "#4A7FA7";
                 }
               }}
               onMouseLeave={(e) => {
                 if (status !== "loading" && status !== "success") {
-                  e.currentTarget.style.background = "#7C3AED";
+                  e.currentTarget.style.background = "#4A7FA7";
                 }
               }}
             >

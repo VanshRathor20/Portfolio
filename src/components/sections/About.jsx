@@ -55,7 +55,7 @@ const About = () => {
                     fontFamily: "Satoshi, sans-serif",
                     fontSize: "48px",
                     fontWeight: "800",
-                    color: "#F0F0F0",
+                    color: "#F6FAFD",
                     letterSpacing: "-0.03em",
                     lineHeight: "1",
                     margin: 0,
@@ -68,7 +68,7 @@ const About = () => {
                     marginTop: "8px",
                     fontFamily: "JetBrains Mono, monospace",
                     fontSize: "11px",
-                    color: "#555",
+                    color: "#B3CFE5",
                     letterSpacing: "0.1em",
                     textTransform: "uppercase",
                   }}
@@ -85,17 +85,17 @@ const About = () => {
                 Full Stack Developer focused on clean UI & scalable systems.
               </h3>
 
-              <p className="text-body-lg" style={{ color: "#A1A1AA" }}>
+              <p className="text-body-lg" style={{ color: "#B3CFE5" }}>
                 I’m Vansh, a Full Stack Developer passionate about
                 building fast, scalable, and visually polished web applications.
               </p>
 
-              <p className="text-body" style={{ color: "#A1A1AA" }}>
+              <p className="text-body" style={{ color: "#B3CFE5" }}>
                 I specialize in creating responsive user experiences using
                 React, JavaScript, Node.js, and modern frontend technologies.
               </p>
 
-              <p className="text-body" style={{ color: "#A1A1AA" }}>
+              <p className="text-body" style={{ color: "#B3CFE5" }}>
                 Currently pursuing B.Tech in Computer Science at IIMT
                 Engineering College, Meerut (2023 – 2027). Previously worked as
                 a Frontend Developer Intern at Tyrano Softwares.
@@ -109,10 +109,10 @@ const About = () => {
                   alignItems: "center",
                   gap: "8px",
                   marginTop: "28px",
-                  border: "1px solid #2a2a2a",
+                  border: "1px solid #2a4a6b",
                   borderRadius: "999px",
                   padding: "10px 20px",
-                  color: "#666",
+                  color: "#B3CFE5",
                   fontSize: "10px",
                   fontFamily: "JetBrains Mono, monospace",
                   textTransform: "uppercase",
@@ -122,12 +122,12 @@ const About = () => {
                   width: "fit-content",
                 }}
                 onMouseEnter={(e) => {
-                  e.currentTarget.style.borderColor = "#7C3AED";
-                  e.currentTarget.style.color = "#A78BFA";
+                  e.currentTarget.style.borderColor = "#4A7FA7";
+                  e.currentTarget.style.color = "#B3CFE5";
                 }}
                 onMouseLeave={(e) => {
-                  e.currentTarget.style.borderColor = "#2a2a2a";
-                  e.currentTarget.style.color = "#666";
+                  e.currentTarget.style.borderColor = "#2a4a6b";
+                  e.currentTarget.style.color = "#B3CFE5";
                 }}
               >
                 ↓ Download Resume

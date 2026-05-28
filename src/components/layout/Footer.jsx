@@ -8,7 +8,7 @@ const Footer = () => {
   return (
     <footer
       style={{
-        borderTop: "1px solid #111",
+        borderTop: "1px solid #2a4a6b",
         padding: "40px 48px",
         maxWidth: "1100px",
         margin: "0 auto",
@@ -28,7 +28,7 @@ const Footer = () => {
           style={{
             fontFamily: "JetBrains Mono, monospace",
             fontSize: "11px",
-            color: "#333",
+            color: "#B3CFE5",
             letterSpacing: "0.05em",
           }}
         >
@@ -47,7 +47,7 @@ const Footer = () => {
             {
               Icon: FiMail,
               href: "https://mail.google.com/mail/?view=cm&to=vanshkumar5887.work@gmail.com",
-              hover: "#7C3AED",
+              hover: "#4A7FA7",
             },
             {
               Icon: FaGithub,
@@ -76,12 +76,12 @@ const Footer = () => {
               target="_blank"
               rel="noreferrer"
               style={{
-                color: "#333",
+                color: "#B3CFE5",
                 transition: "color 0.2s",
                 display: "flex",
               }}
               onMouseEnter={(e) => (e.currentTarget.style.color = hover)}
-              onMouseLeave={(e) => (e.currentTarget.style.color = "#333")}
+              onMouseLeave={(e) => (e.currentTarget.style.color = "#B3CFE5")}
             >
               <Icon size={16} />
             </a>

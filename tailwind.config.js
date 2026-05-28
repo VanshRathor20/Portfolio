@@ -4,14 +4,14 @@ export default {
   theme: {
     extend: {
       colors: {
-        bg: "#0A0A0A",
-        surface: "#0F0F0F",
-        card: "#141414",
-        border: "#1F1F1F",
-        muted: "#71717A",
+        bg: "#0A1931",
+        surface: "#1A3D63",
+        card: "#1A3D63",
+        border: "#2a4a6b",
+        muted: "#B3CFE5",
         subtle: "#3F3F46",
-        primary: "#ECECEC",
-        accent: "#7C3AED",
+        primary: "#F6FAFD",
+        accent: "#4A7FA7",
       },
       fontFamily: {
         display: ["'Satoshi'", "sans-serif"],

@@ -33,9 +33,9 @@ const ScrollToTop = () => {
             width: "44px",
             height: "44px",
             borderRadius: "50%",
-            background: "#0f0f0f",
-            border: "1px solid #7C3AED",
-            color: "#7C3AED",
+            background: "#1A3D63",
+            border: "1px solid #4A7FA7",
+            color: "#4A7FA7",
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
@@ -44,17 +44,17 @@ const ScrollToTop = () => {
             transition: "all 0.3s",
           }}
           onMouseEnter={(e) => {
-            e.currentTarget.style.background = "#7C3AED";
+            e.currentTarget.style.background = "#4A7FA7";
             e.currentTarget.style.color = "#fff";
             e.currentTarget.style.boxShadow =
-              "0 0 12px rgba(124,58,237,0.9), 0 0 28px rgba(124,58,237,0.6)";
-            e.currentTarget.style.borderColor = "rgba(124,58,237,0.9)";
+              "0 0 12px rgba(74, 127, 167, 0.9), 0 0 28px rgba(74, 127, 167, 0.6)";
+            e.currentTarget.style.borderColor = "rgba(74, 127, 167, 0.9)";
           }}
           onMouseLeave={(e) => {
-            e.currentTarget.style.background = "#0f0f0f";
-            e.currentTarget.style.color = "#7C3AED";
+            e.currentTarget.style.background = "#1A3D63";
+            e.currentTarget.style.color = "#4A7FA7";
             e.currentTarget.style.boxShadow = "none";
-            e.currentTarget.style.borderColor = "#7C3AED";
+            e.currentTarget.style.borderColor = "#4A7FA7";
           }}
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.9 }}

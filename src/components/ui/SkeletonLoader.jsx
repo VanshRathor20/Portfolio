@@ -206,7 +206,7 @@ const SkeletonLoader = () => {
         id="projects"
         className="skeleton-section projects-section"
         style={{
-          background: "#0C0C0C",
+          background: "#0A1931",
           borderRadius: "48px 48px 0 0",
           marginTop: "-40px",
           position: "relative",
@@ -235,8 +235,8 @@ const SkeletonLoader = () => {
               style={{
                 marginBottom: "16px",
                 borderRadius: "24px",
-                border: "1px solid #1e1e1e",
-                background: "#0f0f0f",
+                border: "1px solid #2a4a6b",
+                background: "#1A3D63",
                 padding: "36px",
                 overflow: "hidden",
                 minHeight: projectIndex === 4 ? "420px" : "min(76vh, 600px)",
@@ -304,7 +304,7 @@ const SkeletonLoader = () => {
               bottom: 0,
               width: "1px",
               background:
-                "linear-gradient(to bottom, transparent, #2a2a2a 10%, #2a2a2a 90%, transparent)",
+                "linear-gradient(to bottom, transparent, #2a4a6b 10%, #2a4a6b 90%, transparent)",
               transform: "translateX(-50%)",
             }}
           />
@@ -332,8 +332,8 @@ const SkeletonLoader = () => {
                     width: "12px",
                     height: "12px",
                     borderRadius: "50%",
-                    background: "#7C3AED",
-                    border: "2px solid #0A0A0A",
+                    background: "#4A7FA7",
+                    border: "2px solid #0A1931",
                   }}
                 />
 
@@ -341,8 +341,8 @@ const SkeletonLoader = () => {
                   style={{
                     maxWidth: "380px",
                     width: "100%",
-                    background: "#0f0f0f",
-                    border: "1px solid #1e1e1e",
+                    background: "#1A3D63",
+                    border: "1px solid #2a4a6b",
                     borderRadius: "16px",
                     padding: "24px",
                   }}
@@ -464,7 +464,7 @@ const SkeletonLoader = () => {
         .skeleton-block {
           position: relative;
           overflow: hidden;
-          background: linear-gradient(90deg, #1a1a1a 25%, #2a2a2a 37%, #1a1a1a 63%);
+          background: linear-gradient(90deg, #1A3D63 25%, #2a4a6b 37%, #1A3D63 63%);
           background-size: 400% 100%;
           animation: skeleton-shimmer 1.4s ease-in-out infinite;
         }
@@ -472,7 +472,7 @@ const SkeletonLoader = () => {
         .skeleton-card {
           position: relative;
           overflow: hidden;
-          background: #0f0f0f;
+          background: #1A3D63;
         }
 
         .skeleton-section {

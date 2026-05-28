@@ -52,11 +52,11 @@ const Experience = () => {
 
   return (
     <section id="experience" className="py-32 px-8 max-w-5xl mx-auto">
-      <p className="font-mono text-xs text-[#7C3AED] tracking-widest uppercase mb-4">
+      <p className="font-mono text-xs text-[#4A7FA7] tracking-widest uppercase mb-4">
         EXPERIENCE & EDUCATION
       </p>
       <h2
-        className="font-display text-5xl font-bold text-[#F0F0F0] mb-20"
+        className="font-display text-5xl font-bold text-[#F6FAFD] mb-20"
         style={{ letterSpacing: "-0.03em" }}
       >
         My Journey.
@@ -75,7 +75,7 @@ const Experience = () => {
             bottom: 0,
             width: "1px",
             background:
-              "linear-gradient(to bottom, transparent, #7C3AED 10%, #7C3AED 90%, transparent)",
+              "linear-gradient(to bottom, transparent, #4A7FA7 10%, #4A7FA7 90%, transparent)",
             transformOrigin: "top",
           }}
         />
@@ -108,11 +108,11 @@ const Experience = () => {
                   width: "12px",
                   height: "12px",
                   borderRadius: "50%",
-                  background: "#7C3AED",
-                  border: "2px solid #0A0A0A",
+                  background: "#4A7FA7",
+                  border: "2px solid #0A1931",
                   zIndex: 2,
                   boxShadow: item.isCurrent
-                    ? "0 0 0 4px rgba(124,58,237,0.2)"
+                    ? "0 0 0 4px rgba(74,127,167,0.2)"
                     : "none",
                   animation: item.isCurrent ? "pulse 2s infinite" : "none",
                 }}
@@ -127,12 +127,12 @@ const Experience = () => {
                   ease: [0.22, 1, 0.36, 1],
                   delay: index * 0.1,
                 }}
-                whileHover={{ borderColor: "#7C3AED" }}
+                whileHover={{ borderColor: "#4A7FA7" }}
                 style={{
                   maxWidth: "380px",
                   width: "100%",
-                  background: "#0f0f0f",
-                  border: "1px solid #1e1e1e",
+                  background: "#1A3D63",
+                  border: "1px solid #2a4a6b",
                   borderRadius: "16px",
                   padding: "24px",
                   transition: "all 0.3s",
@@ -142,7 +142,7 @@ const Experience = () => {
                   style={{
                     fontFamily: "JetBrains Mono, monospace",
                     fontSize: "10px",
-                    color: "#7C3AED",
+                    color: "#4A7FA7",
                     letterSpacing: "0.2em",
                     textTransform: "uppercase",
                     marginBottom: "8px",
@@ -156,7 +156,7 @@ const Experience = () => {
                     fontFamily: "Satoshi, sans-serif",
                     fontSize: "18px",
                     fontWeight: "700",
-                    color: "#F0F0F0",
+                    color: "#F6FAFD",
                     letterSpacing: "-0.02em",
                   }}
                 >
@@ -167,7 +167,7 @@ const Experience = () => {
                   style={{
                     fontFamily: "JetBrains Mono, monospace",
                     fontSize: "12px",
-                    color: "#555",
+                    color: "#B3CFE5",
                     marginTop: "4px",
                   }}
                 >
@@ -178,7 +178,7 @@ const Experience = () => {
                   style={{
                     fontFamily: "Inter, sans-serif",
                     fontSize: "14px",
-                    color: "#666",
+                    color: "#B3CFE5",
                     marginTop: "12px",
                     lineHeight: 1.7,
                   }}

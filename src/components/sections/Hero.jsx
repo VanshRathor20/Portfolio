@@ -88,7 +88,7 @@ const Hero = () => {
                       height: "500px",
                       borderRadius: "50%",
                       background:
-                        "linear-gradient(135deg, #111 0%, #1a1a1a 50%, #111 100%)",
+                        "linear-gradient(135deg, #0A1931 0%, #1A3D63 50%, #0A1931 100%)",
                       backgroundSize: "200% 200%",
                       animation: "shimmer 1.5s infinite",
                       margin: "0 auto",

@@ -46,7 +46,7 @@ const GROUPS = [
     badges: [
       { name: "Node.js", Icon: FaNodeJs, color: "#68A063" },
       { name: "Express", Icon: SiExpress, color: "#ffffff" },
-      { name: "REST", Icon: TbApi, color: "#7C3AED" },
+      { name: "REST", Icon: TbApi, color: "#4A7FA7" },
       { name: "Java", Icon: FaJava, color: "#f89820" },
       // { name: "GraphQL", Icon: SiGraphql, color: "#E10098" },
       // { name: "Socket.io", Icon: SiSocketdotio, color: "#ffffff" },
@@ -106,7 +106,7 @@ const Skills = () => {
                 style={{
                   fontFamily: "JetBrains Mono, monospace",
                   fontSize: "10px",
-                  color: "#7C3AED",
+                  color: "#4A7FA7",
                   letterSpacing: "0.2em",
                   textTransform: "uppercase",
                   marginBottom: "16px",
@@ -138,8 +138,8 @@ const Skills = () => {
                       display: "inline-flex",
                       alignItems: "center",
                       gap: "8px",
-                      background: "#0f0f0f",
-                      border: "1px solid #1e1e1e",
+                      background: "#1A3D63",
+                      border: "1px solid #2a4a6b",
                       borderRadius: "10px",
                       padding: "10px 16px",
                       marginRight: "10px",
@@ -149,14 +149,14 @@ const Skills = () => {
                       whiteSpace: "nowrap",
                     }}
                     onMouseEnter={(e) => {
-                      e.currentTarget.style.borderColor = "#7C3AED";
+                      e.currentTarget.style.borderColor = "#4A7FA7";
                       e.currentTarget.style.background =
-                        "rgba(124,58,237,0.06)";
+                        "rgba(74, 127, 167, 0.06)";
                       e.currentTarget.style.transform = "translateY(-2px)";
                     }}
                     onMouseLeave={(e) => {
-                      e.currentTarget.style.borderColor = "#1e1e1e";
-                      e.currentTarget.style.background = "#0f0f0f";
+                      e.currentTarget.style.borderColor = "#2a4a6b";
+                      e.currentTarget.style.background = "#1A3D63";
                       e.currentTarget.style.transform = "translateY(0)";
                     }}
                   >
@@ -165,7 +165,7 @@ const Skills = () => {
                       style={{
                         fontFamily: "JetBrains Mono, monospace",
                         fontSize: "12px",
-                        color: "#A1A1AA",
+                        color: "#B3CFE5",
                       }}
                     >
                       {badge.name}

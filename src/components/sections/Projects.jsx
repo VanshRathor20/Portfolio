@@ -45,8 +45,8 @@ const MobileStickyCard = ({ project }) => {
       style={{
         width: "100%",
         borderRadius: "20px",
-        border: "1px solid #1e1e1e",
-        background: "#0f0f0f",
+        border: "1px solid #2a4a6b",
+        background: "#1A3D63",
         padding: "20px",
         marginBottom: "16px",
         display: "flex",
@@ -68,7 +68,7 @@ const MobileStickyCard = ({ project }) => {
               fontFamily: "JetBrains Mono, monospace",
               fontSize: "36px",
               fontWeight: "800",
-              color: "#f0f0f0",
+              color: "#F6FAFD",
               lineHeight: "1",
             }}
           >
@@ -80,7 +80,7 @@ const MobileStickyCard = ({ project }) => {
                 fontFamily: "JetBrains Mono, monospace",
                 fontSize: "8px",
                 letterSpacing: "0.15em",
-                color: "#7C3AED",
+                color: "#4A7FA7",
                 textTransform: "uppercase",
                 marginBottom: "3px",
               }}
@@ -92,7 +92,7 @@ const MobileStickyCard = ({ project }) => {
                 fontFamily: "Satoshi, sans-serif",
                 fontSize: "15px",
                 fontWeight: "700",
-                color: "#F0F0F0",
+                color: "#F6FAFD",
                 letterSpacing: "-0.02em",
               }}
             >
@@ -106,10 +106,10 @@ const MobileStickyCard = ({ project }) => {
           target="_blank"
           rel="noreferrer"
           style={{
-            border: "1px solid #7C3AED",
+            border: "1px solid #4A7FA7",
             borderRadius: "999px",
             padding: "6px 12px",
-            color: "#A78BFA",
+            color: "#B3CFE5",
             fontSize: "8px",
             fontFamily: "JetBrains Mono, monospace",
             textTransform: "uppercase",
@@ -135,8 +135,8 @@ const MobileStickyCard = ({ project }) => {
             style={{
               width: "100%",
               height: "100%",
-              background: "#0a0a0a",
-              border: "1px solid #1a1a1a",
+              background: "#0A1931",
+              border: "1px solid #2a4a6b",
               borderRadius: "12px",
               display: "flex",
               flexDirection: "column",
@@ -150,7 +150,7 @@ const MobileStickyCard = ({ project }) => {
                 fontFamily: "Satoshi, sans-serif",
                 fontSize: "28px",
                 fontWeight: "800",
-                color: "#1a1a1a",
+                color: "#1A3D63",
                 letterSpacing: "-0.03em",
               }}
             >
@@ -160,7 +160,7 @@ const MobileStickyCard = ({ project }) => {
               style={{
                 fontFamily: "JetBrains Mono, monospace",
                 fontSize: "9px",
-                color: "#444",
+                color: "#3a5a7a",
                 letterSpacing: "0.2em",
                 textTransform: "uppercase",
               }}
@@ -185,7 +185,7 @@ const MobileStickyCard = ({ project }) => {
             style={{
               width: "100%",
               height: "100%",
-              background: "#141414",
+              background: "#1A3D63",
               borderRadius: "12px",
             }}
           />
@@ -251,8 +251,8 @@ const DesktopStickyCard = ({
         maxWidth: "1000px",
         margin: "0 auto 16px",
         borderRadius: "24px",
-        border: "1px solid #1e1e1e",
-        background: "#0f0f0f",
+        border: "1px solid #2a4a6b",
+        background: "#1A3D63",
         padding: "36px",
         overflow: "hidden",
         display: "flex",
@@ -283,7 +283,7 @@ const DesktopStickyCard = ({
               fontFamily: "JetBrains Mono, monospace",
               fontSize: "64px",
               fontWeight: "800",
-              color: "#f0f0f0",
+              color: "#F6FAFD",
               lineHeight: "1",
             }}
           >
@@ -295,7 +295,7 @@ const DesktopStickyCard = ({
                 fontFamily: "JetBrains Mono, monospace",
                 fontSize: "9px",
                 letterSpacing: "0.18em",
-                color: "#7C3AED",
+                color: "#4A7FA7",
                 textTransform: "uppercase",
                 marginBottom: "4px",
               }}
@@ -308,7 +308,7 @@ const DesktopStickyCard = ({
                 fontFamily: "Satoshi, sans-serif",
                 fontSize: "20px",
                 fontWeight: "700",
-                color: "#F0F0F0",
+                color: "#F6FAFD",
                 letterSpacing: "-0.02em",
               }}
             >
@@ -322,10 +322,10 @@ const DesktopStickyCard = ({
           target="_blank"
           rel="noreferrer"
           style={{
-            border: "1px solid #7C3AED",
+            border: "1px solid #4A7FA7",
             borderRadius: "999px",
             padding: "8px 20px",
-            color: "#A78BFA",
+            color: "#B3CFE5",
             fontSize: "9px",
             fontFamily: "JetBrains Mono, monospace",
             textTransform: "uppercase",
@@ -356,8 +356,8 @@ const DesktopStickyCard = ({
               width: "100%",
               height: isMobile ? "160px" : "55vh",
               maxHeight: "400px",
-              background: "#0a0a0a",
-              border: "1px solid #1a1a1a",
+              background: "#0A1931",
+              border: "1px solid #2a4a6b",
               borderRadius: "14px",
               display: "flex",
               alignItems: "center",
@@ -375,7 +375,7 @@ const DesktopStickyCard = ({
                 fontFamily: "Satoshi, sans-serif",
                 fontSize: "clamp(60px, 10vw, 120px)",
                 fontWeight: "800",
-                color: "#141414",
+                color: "#1A3D63",
                 letterSpacing: "-0.04em",
                 userSelect: "none",
                 lineHeight: "1.1",
@@ -406,12 +406,12 @@ const DesktopStickyCard = ({
             style={{
               width: "100%",
               height: "100%",
-              background: "#141414",
+              background: "#1A3D63",
               borderRadius: "14px",
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
-              color: "#252525",
+              color: "#2a4a6b",
               fontSize: "8px",
               fontFamily: "JetBrains Mono, monospace",
               textTransform: "uppercase",
@@ -463,7 +463,7 @@ const Projects = () => {
       id="projects"
       className="projects-section"
       style={{
-        background: "#0C0C0C",
+        background: "#0A1931",
         borderRadius: "48px 48px 0 0",
         marginTop: "-40px",
         position: "relative",
@@ -480,7 +480,7 @@ const Projects = () => {
             fontFamily: "JetBrains Mono, monospace",
             fontSize: "10px",
             letterSpacing: "0.2em",
-            color: "#7C3AED",
+            color: "#4A7FA7",
             textTransform: "uppercase",
             marginBottom: "12px",
           }}
@@ -492,7 +492,7 @@ const Projects = () => {
             fontFamily: "Satoshi, sans-serif",
             fontSize: "48px",
             fontWeight: "700",
-            color: "#F0F0F0",
+            color: "#F6FAFD",
             letterSpacing: "-0.03em",
             margin: 0,
           }}
