@@ -893,6 +893,15 @@
   .about-bio .text-subheading {
     margin-bottom: var(--space-2);
   }
+  @property --angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
+@keyframes rotateBorder {
+  to { --angle: 360deg; }
+}
 
   /* ── Skills ── */
   .skills-grid {

@@ -86,8 +86,8 @@ const About = () => {
               </h3>
 
               <p className="text-body-lg" style={{ color: "#B3CFE5" }}>
-                I’m Vansh, a Full Stack Developer passionate about
-                building fast, scalable, and visually polished web applications.
+                I'm Vansh, a Full Stack Developer passionate about building
+                fast, scalable, and visually polished web applications.
               </p>
 
               <p className="text-body" style={{ color: "#B3CFE5" }}>
@@ -101,37 +101,49 @@ const About = () => {
                 a Frontend Developer Intern at Tyrano Softwares.
               </p>
 
-              <a
-                href="/resume.pdf"
-                download
+              {/* ✅ Rotating border Download Resume button */}
+              <div
                 style={{
+                  position: "relative",
                   display: "inline-flex",
-                  alignItems: "center",
-                  gap: "8px",
                   marginTop: "28px",
-                  border: "1px solid #2a4a6b",
                   borderRadius: "999px",
-                  padding: "10px 20px",
-                  color: "#B3CFE5",
-                  fontSize: "10px",
-                  fontFamily: "JetBrains Mono, monospace",
-                  textTransform: "uppercase",
-                  letterSpacing: "0.15em",
-                  textDecoration: "none",
-                  transition: "all 0.3s",
+                  padding: "1.5px",
+                  background: "conic-gradient(from var(--angle, 0deg), transparent 20%, #B3CFE5 40%, #4A7FA7 50%, #B3CFE5 60%, transparent 80%)",
+                  animation: "rotateBorder 3s linear infinite",
                   width: "fit-content",
                 }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.borderColor = "#4A7FA7";
-                  e.currentTarget.style.color = "#B3CFE5";
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.borderColor = "#2a4a6b";
-                  e.currentTarget.style.color = "#B3CFE5";
-                }}
+                className="btn-animated-wrapper"
               >
-                ↓ Download Resume
-              </a>
+                <a
+                  href="/resume.pdf"
+                  download
+                  style={{
+                    display: "inline-flex",
+                    alignItems: "center",
+                    gap: "8px",
+                    borderRadius: "999px",
+                    padding: "10px 20px",
+                    background: "#0A1931",
+                    color: "#B3CFE5",
+                    fontSize: "10px",
+                    fontFamily: "JetBrains Mono, monospace",
+                    textTransform: "uppercase",
+                    letterSpacing: "0.15em",
+                    textDecoration: "none",
+                    transition: "color 0.3s ease",
+                    width: "100%",
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.color = "#F6FAFD";
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.color = "#B3CFE5";
+                  }}
+                >
+                  ↓ Download Resume
+                </a>
+              </div>
             </Reveal>
           </div>
         </div>
