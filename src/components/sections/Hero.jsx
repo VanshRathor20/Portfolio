@@ -63,12 +63,12 @@ const Hero = () => {
             </p>
 
             <div className="hero-actions">
-              <Button href="#projects" variant="primary">
+              <Button href="#projects" variant="primary" className="btn-lg">
                 View Projects
               </Button>
 
-              <Button href="#contact" variant="secondary">
-                Let’s Connect
+              <Button href="#contact" variant="secondary" className="btn-lg">
+                Let's Connect
               </Button>
             </div>
           </motion.div>

@@ -414,7 +414,7 @@
     font-weight: 500;
     line-height: 1;
     white-space: nowrap;
-    border-radius: var(--radius-lg);
+      border-radius: 9999px;
     border: 1px solid transparent;
     transition:
       background-color var(--duration-base) var(--ease-out),
@@ -472,9 +472,9 @@
   }
 
   .btn-lg {
-    padding: var(--space-4) var(--space-8);
+     padding: var(--space-4) var(--space-10);
     font-size: var(--text-base);
-    border-radius: var(--radius-lg);
+    border-radius: 9999px;
   }
 
   /* Stack & grid helpers */
