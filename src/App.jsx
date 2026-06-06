@@ -9,6 +9,7 @@ import Projects from "./components/sections/Projects";
 import Experience from "./components/sections/Experience";
 import Contact from "./components/sections/Contact";
 import ScrollToTop from "./components/ScrollToTop";
+import CursorTrail from "./components/CursorTrail";
 import SkeletonLoader from "./components/ui/SkeletonLoader";
 
 export default function App() {
@@ -24,6 +25,7 @@ export default function App() {
 
   return (
     <>
+      <CursorTrail />
       <Navbar />
       <AnimatePresence mode="wait">
         {isLoading ? (
