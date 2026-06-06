@@ -80,18 +80,22 @@ const Navbar = () => {
           zIndex: 1000,
         }}
       >
+        {/* ✅ Liquid glass desktop navbar */}
         <div
           style={{
             background: scrolled
-              ? "rgba(10, 25, 49, 0.75)"
-              : "rgba(10, 25, 49, 0.55)",
-            backdropFilter: "blur(14px)",
+              ? "rgba(255, 255, 255, 0.10)" // 0.06 → 0.10
+              : "rgba(255, 255, 255, 0.06)", // 0.03 → 0.06
+            backdropFilter: "blur(20px) saturate(180%)",
+            WebkitBackdropFilter: "blur(20px) saturate(180%)",
             border: scrolled
-              ? "1px solid rgba(74, 127, 167, 0.08)"
-              : "1px solid rgba(74, 127, 167, 0.05)",
+              ? "1px solid rgba(255, 255, 255, 0.18)" // 0.12 → 0.18
+              : "1px solid rgba(255, 255, 255, 0.10)", // 0.06 → 0.10
             borderRadius: "22px",
             transition: "all 0.3s ease",
-            boxShadow: scrolled ? "0 10px 40px rgba(0,0,0,0.35)" : "none",
+            boxShadow: scrolled
+              ? "0 8px 32px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.08)"
+              : "inset 0 1px 0 rgba(255,255,255,0.04)",
           }}
         >
           <Container className="navbar-container">
@@ -159,7 +163,6 @@ const Navbar = () => {
             left: "12px",
             right: "12px",
             zIndex: 1000,
-            // ✅ Liquid glass — outer pill container
             background: "rgba(255, 255, 255, 0.04)",
             backdropFilter: "blur(24px) saturate(180%)",
             WebkitBackdropFilter: "blur(24px) saturate(180%)",
@@ -170,7 +173,6 @@ const Navbar = () => {
             gap: "8px",
             justifyContent: "center",
             alignItems: "center",
-            // ✅ Glass layered shadows
             boxShadow: `
               0 8px 32px rgba(0, 0, 0, 0.4),
               0 2px 8px rgba(0, 0, 0, 0.3),
@@ -200,7 +202,6 @@ const Navbar = () => {
                   alignItems: "center",
                   justifyContent: "center",
                   flexShrink: 0,
-                  // ✅ Active = solid glass pill, inactive = transparent
                   background: isActive
                     ? "rgba(74, 127, 167, 0.55)"
                     : "rgba(255, 255, 255, 0.04)",
