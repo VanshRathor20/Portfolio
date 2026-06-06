@@ -1,4 +1,4 @@
-import Spline from "@splinetool/react-spline";
+import Spline from '@splinetool/react-spline';
 
 export default function Robo({ onLoad }) {
   return (
@@ -11,7 +11,7 @@ export default function Robo({ onLoad }) {
       }}
     >
       <Spline
-        scene="https://prod.spline.design/i-Dau1OxM2uetrTH/scene.splinecode"
+        scene="https://prod.spline.design/r7LyER-xttOddq6w/scene.splinecode"
         onLoad={onLoad}
         style={{
           width: "100%",
