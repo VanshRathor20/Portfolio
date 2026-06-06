@@ -42,10 +42,7 @@ const Navbar = () => {
   }, []);
 
   useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth < 768);
-    };
-
+    const handleResize = () => setIsMobile(window.innerWidth < 768);
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
@@ -70,7 +67,7 @@ const Navbar = () => {
 
   return (
     <>
-      {/* ── DESKTOP NAVBAR (top, hidden on mobile) ── */}
+      {/* ── DESKTOP NAVBAR ── */}
       <header
         className="hidden md:block"
         style={{
@@ -107,7 +104,6 @@ const Navbar = () => {
                 justifyContent: "space-between",
               }}
             >
-              {/* Logo */}
               <span
                 onClick={() => scrollTo("home")}
                 style={{
@@ -127,7 +123,6 @@ const Navbar = () => {
                 />
               </span>
 
-              {/* Desktop links */}
               <div
                 style={{ display: "flex", alignItems: "center", gap: "34px" }}
               >
@@ -136,12 +131,10 @@ const Navbar = () => {
                     key={link.id}
                     onClick={() => scrollTo(link.id)}
                     style={navLinkStyle}
-                    onMouseEnter={(e) => {
-                      e.currentTarget.style.color = "#fff";
-                    }}
-                    onMouseLeave={(e) => {
-                      e.currentTarget.style.color = "#B3CFE5";
-                    }}
+                    onMouseEnter={(e) => (e.currentTarget.style.color = "#fff")}
+                    onMouseLeave={(e) =>
+                      (e.currentTarget.style.color = "#B3CFE5")
+                    }
                   >
                     {link.label}
                   </span>
@@ -152,7 +145,7 @@ const Navbar = () => {
         </div>
       </header>
 
-      {/* ── MOBILE BOTTOM NAVBAR (visible only on mobile) ── */}
+      {/* ── MOBILE BOTTOM NAVBAR — liquid glass ── */}
       {isMobile && (
         <motion.nav
           className="md:hidden"
@@ -166,16 +159,23 @@ const Navbar = () => {
             left: "12px",
             right: "12px",
             zIndex: 1000,
-            background: "rgba(10, 25, 49, 0.92)",
-            backdropFilter: "blur(18px)",
-            border: "1px solid rgba(74, 127, 167, 0.08)",
+            // ✅ Liquid glass — outer pill container
+            background: "rgba(255, 255, 255, 0.04)",
+            backdropFilter: "blur(24px) saturate(180%)",
+            WebkitBackdropFilter: "blur(24px) saturate(180%)",
+            border: "1px solid rgba(255, 255, 255, 0.10)",
             borderRadius: "9999px",
-            padding: "10px 12px",
+            padding: "8px 20px",
             display: "flex",
-            gap: "6px",
+            gap: "8px",
             justifyContent: "center",
             alignItems: "center",
-            boxShadow: "0 8px 32px rgba(0,0,0,0.55)",
+            // ✅ Glass layered shadows
+            boxShadow: `
+              0 8px 32px rgba(0, 0, 0, 0.4),
+              0 2px 8px rgba(0, 0, 0, 0.3),
+              inset 0 1px 0 rgba(255, 255, 255, 0.08)
+            `,
             maxWidth: "calc(100% - 24px)",
           }}
         >
@@ -190,28 +190,35 @@ const Navbar = () => {
                 aria-label={link.label}
                 title={link.label}
                 onClick={() => scrollTo(link.id)}
-                whileTap={{ scale: 0.9 }}
+                whileTap={{ scale: 0.88 }}
+                whileHover={{ scale: 1.08 }}
                 style={{
-                  width: "40px",
-                  height: "40px",
+                  width: "42px",
+                  height: "42px",
                   borderRadius: "9999px",
                   display: "inline-flex",
                   alignItems: "center",
                   justifyContent: "center",
                   flexShrink: 0,
+                  // ✅ Active = solid glass pill, inactive = transparent
                   background: isActive
-                    ? "rgba(74, 127, 167, 0.85)"
-                    : "rgba(255,255,255,0.05)",
+                    ? "rgba(74, 127, 167, 0.55)"
+                    : "rgba(255, 255, 255, 0.04)",
+                  backdropFilter: isActive ? "blur(12px)" : "none",
+                  WebkitBackdropFilter: isActive ? "blur(12px)" : "none",
                   border: isActive
-                    ? "1px solid rgba(74, 127, 167, 0.4)"
-                    : "1px solid rgba(255,255,255,0.07)",
-                  color: isActive ? "#fff" : "#B3CFE5",
+                    ? "1px solid rgba(179, 207, 229, 0.35)"
+                    : "1px solid rgba(255, 255, 255, 0.06)",
+                  color: isActive ? "#F6FAFD" : "#B3CFE5",
                   cursor: "pointer",
+                  boxShadow: isActive
+                    ? "inset 0 1px 0 rgba(255,255,255,0.15), 0 4px 12px rgba(74,127,167,0.3)"
+                    : "none",
                   transition:
-                    "background 0.25s ease, color 0.25s ease, border 0.25s ease",
+                    "background 0.25s ease, color 0.25s ease, border 0.25s ease, box-shadow 0.25s ease",
                 }}
               >
-                <Icon size={16} />
+                <Icon size={17} />
                 <span className="sr-only">{link.label}</span>
               </motion.button>
             );
