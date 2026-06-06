@@ -78,7 +78,7 @@ const CursorTrail = () => {
         opacity: 0.65,
         willChange: "transform",
         background:
-          "radial-gradient(circle, #B3CFE5 0%, rgba(179, 207, 229, 0.4) 35%, transparent 70%)",
+          "radial-gradient(circle, #7CB9E8 0%, #4A7FA7 40%, transparent 70%)",
       }}
     />
   );
