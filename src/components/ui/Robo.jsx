@@ -15,7 +15,20 @@ export default function Robo({ onLoad }) {
         onLoad={onLoad}
         style={{
           width: "100%",
-          height: "100%",
+          height: "110%",
+          marginBottom: "-40px",
+        }}
+      />
+      {/* Watermark cover */}
+      <div
+        style={{
+          position: "absolute",
+          bottom: 0,
+          left: 0,
+          right: 0,
+          height: "40px",
+          background: "#0A1931", // tera bg color
+          zIndex: 10,
         }}
       />
     </div>
