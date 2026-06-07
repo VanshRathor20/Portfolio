@@ -12,6 +12,16 @@ const Contact = () => {
     message: "",
   });
 
+  const [isMobile, setIsMobile] = useState(
+    typeof window !== "undefined" ? window.innerWidth < 768 : false,
+  );
+
+  useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth < 768);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   const [status, setStatus] = useState("idle"); // "idle" | "loading" | "success" | "error"
   const [errorMessage, setErrorMessage] = useState("");
   const [captchaToken, setCaptchaToken] = useState("");
@@ -203,14 +213,20 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" style={{ paddingTop: "6rem", paddingBottom: "6rem" }}>
+    <section
+      id="contact"
+      style={{
+        paddingTop: "5rem",
+        paddingBottom: isMobile ? "1" : "2rem",
+      }}
+    >
       <div
         className="contact-layout"
         style={{
           gap: "80px",
           maxWidth: "1100px",
           margin: "0 auto",
-          padding: "96px 48px",
+          padding: isMobile ? "0 24px" : "0 48px",
         }}
       >
         {/* LEFT SIDE */}

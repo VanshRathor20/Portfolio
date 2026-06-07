@@ -1,15 +1,25 @@
+import { useState, useEffect } from "react";
 import { FiMail } from "react-icons/fi";
 import { FaGithub, FaLinkedin, FaInstagram } from "react-icons/fa";
 import { SiLeetcode } from "react-icons/si";
 
 const Footer = () => {
   const year = new Date().getFullYear();
+  const [isMobile, setIsMobile] = useState(
+    typeof window !== "undefined" ? window.innerWidth < 768 : false,
+  );
+
+  useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth < 768);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   return (
     <footer
       style={{
         borderTop: "1px solid #2a4a6b",
-        padding: "40px 48px",
+        padding: isMobile ? "40px 48px 100px" : "40px 48px",
         maxWidth: "1100px",
         margin: "0 auto",
       }}
@@ -32,7 +42,7 @@ const Footer = () => {
             letterSpacing: "0.05em",
           }}
         >
-          © {year} Vansh 
+          © {year} Vansh
         </p>
 
         {/* CENTER — Social icons */}
@@ -113,7 +123,7 @@ const Footer = () => {
         <span
           style={{ fontFamily: "JetBrains Mono, monospace", fontSize: "13px" }}
         >
-          &lt;/&gt; with ❤️ by Vansh 
+          &lt;/&gt; with ❤️ by Vansh
         </span>
       </div>
     </footer>
