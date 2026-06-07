@@ -49,7 +49,7 @@ const Hero = () => {
             gridTemplateColumns: isMobile ? "1fr" : "1fr 1fr",
             gap: "2.5rem",
             alignItems: "center",
-            minHeight: "100vh",
+            minHeight: isMobile ? "auto" : "calc(100vh - 160px)",
           }}
         >
           <motion.div className="hero-content stack-lg" {...anim}>
