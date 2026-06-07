@@ -217,7 +217,7 @@ const Contact = () => {
       id="contact"
       style={{
         paddingTop: "5rem",
-        paddingBottom: isMobile ? "1" : "2rem",
+        paddingBottom: isMobile ? "2rem" : "2rem",
       }}
     >
       <div
