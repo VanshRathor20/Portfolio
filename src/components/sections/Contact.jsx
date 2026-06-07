@@ -28,7 +28,9 @@ const Contact = () => {
   const recaptchaRef = useRef();
 
   const BACKEND_URL =
-    import.meta.env.VITE_BACKEND_URL || "http://localhost:5000";
+    import.meta.env.VITE_BACKEND_URL ||
+    import.meta.env.VITE_API_URL ||
+    "http://localhost:5000";
   const RECAPTCHA_SITE_KEY = import.meta.env.VITE_RECAPTCHA_SITE_KEY;
 
   // Debug: log Vite env for reCAPTCHA (helps detect missing env values)
