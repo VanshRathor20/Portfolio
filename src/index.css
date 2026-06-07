@@ -13,14 +13,7 @@
   min-height: 100vh;
   display: flex;
   align-items: center;
-}
-section:first-of-type {
-  padding-top: 0 !important;
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  padding-top: 0 !important;
-  margin-top: 0 !important;
+  /* allow component / global styles to control vertical spacing */
 }
 
 .hero-grid {
@@ -80,15 +73,15 @@ section {
 /* ===== MOBILE ===== */
 @media (max-width: 768px) {
   .hero {
-    min-height: 100vh !important;
-    padding-top: 0 !important;
+    min-height: auto !important;
+    /* rely on component inline padding for top spacing */
   }
 
   .hero-grid {
     flex-direction: column !important;
     gap: 0 !important;
-    min-height: 100vh !important;
-    padding-top: 80px !important;
+    min-height: auto !important;
+    padding-top: 0 !important;
     padding-bottom: 20px !important;
   }
 

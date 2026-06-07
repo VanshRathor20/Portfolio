@@ -11,21 +11,21 @@
    ───────────────────────────────────────────── */
 :root {
   /* Background & surfaces — thoda light kiya */
-  --color-bg: #0A1931;             
-  --color-surface: #1A3D63;        
-  --color-surface-raised: #1A3D63;  
-  --color-border: #2a4a6b;         
-  --color-border-strong: #3a5a7a;   
- 
+  --color-bg: #0a1931;
+  --color-surface: #1a3d63;
+  --color-surface-raised: #1a3d63;
+  --color-border: #2a4a6b;
+  --color-border-strong: #3a5a7a;
+
   /* Text — better visibility */
-  --color-text: #F6FAFD;          
-  --color-text-soft: #F6FAFD;       
-  --color-text-muted: #B3CFE5;      
+  --color-text: #f6fafd;
+  --color-text-soft: #f6fafd;
+  --color-text-muted: #b3cfe5;
   --color-text-subtle: #52525b;
 
   /* Accent — highlights only */
-  --color-accent: #4A7FA7;
-  --color-accent-hover: #4A7FA7;
+  --color-accent: #4a7fa7;
+  --color-accent-hover: #4a7fa7;
   --color-accent-muted: rgba(74, 127, 167, 0.12);
 
   /* Typography */
@@ -116,8 +116,8 @@
   }
 
   body {
-    background-color: #0A1931;
-    color: #F6FAFD;
+    background-color: #0a1931;
+    color: #f6fafd;
     font-family: "Inter", sans-serif;
     -webkit-font-smoothing: antialiased;
     font-size: 16px;
@@ -133,7 +133,7 @@
   h4 {
     font-family: "Satoshi", sans-serif;
     font-weight: 700;
-    color: #F6FAFD;
+    color: #f6fafd;
     letter-spacing: -0.02em;
     margin: 0;
     line-height: var(--leading-tight);
@@ -164,7 +164,7 @@
   span,
   li {
     font-family: "Inter", sans-serif;
-    color: #B3CFE5;
+    color: #b3cfe5;
     line-height: 1.7;
     margin: 0;
   }
@@ -210,10 +210,10 @@
    Layout — section & container
    ───────────────────────────────────────────── */
 @layer components {
-  /* Section spacing — generous like e-mart */
+  /* Section spacing — consistent across all sections */
   section {
-    padding-top: 120px;
-    padding-bottom: 120px;
+    padding-top: 80px;
+    padding-bottom: 80px;
   }
 
   /* Section label style — used everywhere */
@@ -222,7 +222,7 @@
     font-size: 0.7rem;
     letter-spacing: 0.2em;
     text-transform: uppercase;
-    color: #4A7FA7;
+    color: #4a7fa7;
     margin-bottom: 1rem;
     display: block;
   }
@@ -232,7 +232,7 @@
     font-family: "Satoshi", sans-serif;
     font-size: clamp(2rem, 4vw, 3.5rem);
     font-weight: 700;
-    color: #F6FAFD;
+    color: #f6fafd;
     letter-spacing: -0.03em;
     line-height: 1.1;
     margin-bottom: 1.5rem;
@@ -242,7 +242,7 @@
   .divider {
     width: 40px;
     height: 1px;
-    background: #4A7FA7;
+    background: #4a7fa7;
     margin: 2rem 0;
   }
 
@@ -250,7 +250,7 @@
   .container {
     max-width: 1100px;
     margin: 0 auto;
-    padding: 0 2rem;
+    padding: 0 1.5rem; /* 24px mobile */
   }
 
   .container-sm {
@@ -414,7 +414,7 @@
     font-weight: 500;
     line-height: 1;
     white-space: nowrap;
-    border-radius:9999px;
+    border-radius: 9999px;
     border: 1px solid transparent;
     transition:
       background-color var(--duration-base) var(--ease-out),
@@ -472,9 +472,9 @@
   }
 
   .btn-lg {
-     padding: var(--space-4) var(--space-10);
+    padding: var(--space-4) var(--space-10);
     font-size: var(--text-base);
-     border-radius: 9999px;
+    border-radius: 9999px;
   }
 
   /* Stack & grid helpers */
@@ -530,6 +530,9 @@
   @media (min-width: 768px) {
     .container.navbar-container {
       padding-inline: 2rem;
+    }
+    .container {
+      padding: 0 3rem; /* 48px desktop */
     }
   }
 
@@ -670,8 +673,6 @@
     display: flex;
     align-items: center;
     min-height: 100vh;
-    padding-top: 0 !important;
-    padding-bottom: 0 !important;
   }
 
   .hero-grid {
@@ -894,14 +895,16 @@
     margin-bottom: var(--space-2);
   }
   @property --angle {
-  syntax: "<angle>";
-  initial-value: 0deg;
-  inherits: false;
-}
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+  }
 
-@keyframes rotateBorder {
-  to { --angle: 360deg; }
-}
+  @keyframes rotateBorder {
+    to {
+      --angle: 360deg;
+    }
+  }
 
   /* ── Skills ── */
   .skills-grid {
@@ -950,13 +953,20 @@
   }
 
   .skill-badges {
-    display: flex;
-    flex-wrap: wrap;
-    gap: var(--space-2);
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
     margin: 0;
     margin-top: auto;
     padding: 0;
     list-style: none;
+  }
+
+  @media (min-width: 768px) {
+    .skill-badges {
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--space-4);
+    }
   }
 
   .skill-badge {
@@ -1368,10 +1378,6 @@
 
     .skills-grid {
       grid-template-columns: 1fr;
-    }
-
-    .skill-badges {
-      flex-wrap: wrap;
     }
 
     .projects-section {

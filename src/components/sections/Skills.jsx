@@ -78,17 +78,7 @@ const Skills = () => {
   const reduceMotion = useReducedMotion();
 
   return (
-    <section
-      id="skills"
-      style={{
-        paddingTop: "6rem",
-        paddingBottom: "6rem",
-        paddingLeft: "2rem",
-        paddingRight: "2rem",
-        maxWidth: "1100px",
-        margin: "0 auto",
-      }}
-    >
+    <section id="skills">
       <Container>
         <Reveal>
           <SectionHeading label="SKILLS" title="Toolbox" />
@@ -116,14 +106,7 @@ const Skills = () => {
                 {group.label}
               </div>
 
-              <div
-                style={{
-                  display: "flex",
-                  flexWrap: "wrap",
-                  gap: "10px",
-                  paddingBottom: "0",
-                }}
-              >
+              <div className="skill-badges">
                 {group.badges.map((badge, bIndex) => (
                   <motion.span
                     key={badge.name}
@@ -134,20 +117,7 @@ const Skills = () => {
                       duration: 0.4,
                       delay: (gIndex * 10 + bIndex) * 0.03,
                     }}
-                    style={{
-                      display: "inline-flex",
-                      alignItems: "center",
-                      gap: "8px",
-                      background: "#1A3D63",
-                      border: "1px solid #2a4a6b",
-                      borderRadius: "10px",
-                      padding: "10px 16px",
-                      marginRight: "10px",
-                      marginBottom: "10px",
-                      cursor: "default",
-                      transition: "all 0.2s",
-                      whiteSpace: "nowrap",
-                    }}
+                    className="skill-badge"
                     onMouseEnter={(e) => {
                       e.currentTarget.style.borderColor = "#4A7FA7";
                       e.currentTarget.style.background =
