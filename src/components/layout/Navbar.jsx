@@ -47,6 +47,28 @@ const Navbar = () => {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
+  // Update active nav item based on scroll / visibility of sections
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollY = window.scrollY + window.innerHeight * 0.35;
+
+      let currentId = "home";
+
+      NAV_LINKS.forEach((link) => {
+        const el = document.getElementById(link.id);
+        if (el && el.offsetTop <= scrollY) {
+          currentId = link.id;
+        }
+      });
+
+      setActiveId(currentId);
+    };
+
+    handleScroll(); // run on mount
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   const scrollTo = (id) => {
     const el = document.getElementById(id);
     if (el) el.scrollIntoView({ behavior: "smooth" });
