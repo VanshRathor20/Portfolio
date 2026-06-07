@@ -2,7 +2,10 @@ import { useEffect, useRef, useState } from "react";
 import { motion, useScroll, useTransform, useSpring } from "framer-motion";
 import tyranoImg from "../../assets/tyrano-software.png";
 import emartImg from "../../assets/emart-home.png";
-const financeImg = new URL("../../assets/finance-dashboard.png", import.meta.url).href;
+const financeImg = new URL(
+  "../../assets/finance-dashboard.png",
+  import.meta.url,
+).href;
 
 const projects = [
   {
@@ -469,7 +472,7 @@ const Projects = () => {
         position: "relative",
         zIndex: 10,
         paddingTop: "80px",
-        paddingBottom: "160px",
+        paddingBottom: isMobile ? "60px" : "160px",
         paddingLeft: isMobile ? "24px" : "48px",
         paddingRight: isMobile ? "24px" : "48px",
       }}
