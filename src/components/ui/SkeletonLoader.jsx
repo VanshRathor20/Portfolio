@@ -72,11 +72,11 @@ const SkeletonLoader = () => {
                     justifyContent: "center",
                   }}
                 >
-                  <SkeletonBlock
+                  <div
                     style={{
-                      width: "min(500px, 100%)",
+                      width: "min(460px, 45vw)",
                       aspectRatio: "1 / 1",
-                      borderRadius: "28px",
+                      background: "transparent",
                     }}
                   />
                 </div>

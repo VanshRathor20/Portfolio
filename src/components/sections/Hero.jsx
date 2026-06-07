@@ -3,9 +3,20 @@ import { useState, useEffect } from "react";
 import Button from "../ui/Button";
 import { easeOut, transition } from "../../lib/motion";
 import Robo from "../ui/Robo";
+import Container from "../layout/Container";
 
 const Hero = () => {
   const reduceMotion = useReducedMotion();
+
+  const [isMobile, setIsMobile] = useState(
+    typeof window !== "undefined" ? window.innerWidth < 768 : false,
+  );
+
+  useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth < 768);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   const anim = reduceMotion
     ? {}
@@ -23,33 +34,24 @@ const Hero = () => {
         transition: { ...transition, delay: 0.15, ease: easeOut },
       };
 
-  const [roboLoaded, setRoboLoaded] = useState(false);
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setRoboLoaded(true);
-    }, 3000);
-    return () => clearTimeout(timer);
-  }, []);
+  // Robo is lazy-loaded inside its component (Suspense fallback is transparent)
 
   return (
-    <section id="home" className="hero">
-      <div
-        style={{
-          minHeight: "100vh",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          paddingTop: "80px",
-          paddingLeft: "16px",
-          paddingRight: "16px",
-          paddingBottom: "40px",
-          maxWidth: "1100px",
-          margin: "0 auto",
-          width: "100%",
-        }}
-      >
-        <div className="hero-grid">
+    <section
+      id="home"
+      className="hero"
+      style={{ paddingTop: isMobile ? "60px" : "80px" }}
+    >
+      <Container>
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns: isMobile ? "1fr" : "1fr 1fr",
+            gap: "2.5rem",
+            alignItems: "center",
+            minHeight: "100vh",
+          }}
+        >
           <motion.div className="hero-content stack-lg" {...anim}>
             <p className="text-label">FULL-STACK DEVELOPER</p>
 
@@ -62,57 +64,50 @@ const Hero = () => {
               applications with modern frontend and backend technologies.
             </p>
 
-            <div className="hero-actions">
-              <Button href="#projects" variant="primary" className="btn-lg">
+            <div
+              className="hero-actions"
+              style={{
+                display: "flex",
+                gap: "1rem",
+                flexDirection: isMobile ? "column" : "row",
+              }}
+            >
+              <Button
+                href="#projects"
+                variant="primary"
+                className="btn-lg"
+                style={isMobile ? { width: "100%" } : {}}
+              >
                 View Projects
               </Button>
 
-              <Button href="#contact" variant="secondary" className="btn-lg">
+              <Button
+                href="#contact"
+                variant="secondary"
+                className="btn-lg"
+                style={isMobile ? { width: "100%" } : {}}
+              >
                 Let's Connect
               </Button>
             </div>
           </motion.div>
-
           <motion.div className="hero-visual-wrap" {...visualAnim}>
-            <div className="hero-visual" aria-hidden="true">
+            <div
+              className="hero-visual"
+              aria-hidden="true"
+              style={{ paddingBottom: isMobile ? "90px" : undefined }}
+            >
               <div className="hero-visual-glow hero-visual-glow--one" />
               <div className="hero-visual-glow hero-visual-glow--two" />
               <div
                 style={{ position: "relative", width: "100%", height: "100%" }}
               >
-                {/* SKELETON — shows while loading */}
-                {!roboLoaded && (
-                  <div
-                    style={{
-                      width: "500px",
-                      height: "500px",
-                      borderRadius: "50%",
-                      background:
-                        "linear-gradient(135deg, #0A1931 0%, #1A3D63 50%, #0A1931 100%)",
-                      backgroundSize: "200% 200%",
-                      animation: "shimmer 1.5s infinite",
-                      margin: "0 auto",
-                    }}
-                  />
-                )}
-
-                {/* ACTUAL ROBOT */}
-                <div
-                  style={{
-                    opacity: roboLoaded ? 1 : 0,
-                    transition: "opacity 0.8s ease",
-                    position: "absolute",
-                    top: 0,
-                    left: 0,
-                  }}
-                >
-                  <Robo onLoad={() => setRoboLoaded(true)} />
-                </div>
+                <Robo />
               </div>
             </div>
           </motion.div>
         </div>
-      </div>
+      </Container>
     </section>
   );
 };
